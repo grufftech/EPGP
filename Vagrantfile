@@ -9,9 +9,13 @@ echo I am provisioning...
 sudo apt-get update
 sudo apt-get install git -y
 sudo apt-get install curl -y
+sudo apt-get install vim -y
 curl -sS https://getcomposer.org/installer | php
-mv composer.phar /usr/local/bin/composer
-echo "please login and run sudo apt-get install lamp-server^ -y and setup your database."
+sudo mv composer.phar /usr/local/bin/composer
+sudo debconf-set-selections <<< 'mysql-server-5.5 mysql-server/root_password password rootpass'
+sudo debconf-set-selections <<< 'mysql-server-5.5 mysql-server/root_password_again password rootpass'
+sudo apt-get update
+sudo apt-get -y install lamp-server^
 SCRIPT
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
