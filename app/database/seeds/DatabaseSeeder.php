@@ -29,8 +29,11 @@ class CharacterTableSeeder extends Seeder {
 		    array('name' => 'Folkmore', 'class' => 'Spellslinger','ep' => rand(0,1000),'gp' => rand(0,1000))
 		));
 
-		/* Use this line to seed the database with a admin user. */
-		//DB::table('users')->insert(array(array('name' => '', 'password' => '')));
+		/* Use this line to seed the database with a admin user. 
+			username: admin
+			password: secret
+		*/
+		DB::table('users')->insert(array(array('name' => 'admin', 'password' => '$2y$10$K/jK9byNzpJPKd24zIqow.Gc3Ns5ryrVUiWixv31XXqwq08id6tZ.')));
     }
 
 }

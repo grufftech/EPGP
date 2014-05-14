@@ -18,12 +18,12 @@ class AdminController extends BaseController {
 	public function showHomepage()
 	{
 		if (!Auth::check()){
-		    // The user is logged in...
 			return Redirect::intended('login');
-		}else{
-			$characters = DB::table('characters')->select(DB::raw('*,ep/gp as pr'))->orderBy('pr','desc')->get();
-			return View::make('admin',compact('characters','loots'));
 		}
+
+		$characters = DB::table('characters')->select(DB::raw('*,ep/gp as pr'))->orderBy('pr','desc')->get();
+		return View::make('admin',compact('characters','loots'));
+		
 	}
 
 	
@@ -39,7 +39,6 @@ class AdminController extends BaseController {
 		}else{
 			echo "nope";
 		}
-
 	}
 	public function logout(){
 		Auth::logout();
