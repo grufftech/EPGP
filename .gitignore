@@ -213,5 +213,3 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
-epgp-laravel/app/config/database.php
-epgp-laravel/app/database/seeds/DatabaseSeeder.php
