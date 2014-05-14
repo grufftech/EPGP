@@ -1,4 +1,34 @@
+## Getting Started with EPGP. 
+
+EPGP is a standard Laravel project, so if you have an existing development environment for Laravel & Composer, it should plug right in.
+
+Alternatively, I've also included a Vagrant environment.  To use Vagrant, you will need to install the following software. 
+
+- [Vagrant](http://www.vagrantup.com/)
+- [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+
+Once those are installed, run "vagrant up" from within your local EPGP folder.  After some time, you should see the following. 
+
+    ==============================================================================
+    I am done! check it out: http://localhost:80
+    I am done! check it out: https://localhost:443
+    
+    I am designed to respond to any domain you point at me.
+    You can connect to MySQL on localhost:3306, User: root, Password: rootpass
+    For security, it is highly recommended to change the default password.
+    ==============================================================================
+
+ Please note, that by default, vagrant is configured to bind itself to ports 80, 443, and 3306.  If you have software already bound to those ports, you will most likely receive an error. 
+
+You can change what ports Vagrant is using by modifying the bottom of vagrantfile. 
+
+      config.vm.network :forwarded_port, guest: 80, host: 80 # Web Port
+      config.vm.network :forwarded_port, guest: 443, host: 443 # SSL Web Port
+      config.vm.network :forwarded_port, guest: 3306, host: 3306 # MySQL Port
+
+
 ## Laravel PHP Framework
+
 
 [![Latest Stable Version](https://poser.pugx.org/laravel/framework/version.png)](https://packagist.org/packages/laravel/framework) [![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.png)](https://packagist.org/packages/laravel/framework) [![Build Status](https://travis-ci.org/laravel/framework.png)](https://travis-ci.org/laravel/framework) [![License](https://poser.pugx.org/laravel/framework/license.png)](https://packagist.org/packages/laravel/framework)
 
