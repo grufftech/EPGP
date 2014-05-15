@@ -28,8 +28,9 @@
 								<thead>
 									<tr>
 										<th>Member Name</th>
-										<th>Item Type</th>
 										<th>Item</th>
+										<th>Item Type</th>
+										<th>Cost</th>
 										<th>Date</th>
 									</tr>
 								</thead>
@@ -37,8 +38,9 @@
 								<?php foreach($loots as $loot){?>
 									<tr>
 										<td>{{$loot->character_id}}</td>
-										<td>{{$loot->loot_slot}}</td>
 										<td><a target=_blank href={{$loot->loot_url}}>{{$loot->loot_name}}</a></td>
+										<td>{{$loot->loot_slot}}</td>
+										<td>{{$loot->value}}</td>
 										<td>{{$loot->created_at}}</td>
 									</tr>
 									<?php } ?>

@@ -18,7 +18,7 @@ class HomeController extends BaseController {
 	public function showHomepage()
 	{
 		$characters = DB::table('characters')->select(DB::raw('*,ep/gp as pr'))->orderBy('pr','desc')->get();
-		$loots = DB::table('character_history')->where('change','gp')->get();
+		$loots = DB::table('character_history')->where('change','gp')->orderBy('id','desc')->take(10)->get();
 		return View::make('home',compact('characters','loots'));
 	}
 

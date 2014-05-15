@@ -365,7 +365,7 @@ $(document).ready(function() {
 
 // Fix page and nav height
 function nav_page_height() {
-	var setHeight = $('#main').height();
+	var setHeight = $('#content').height();
 	//menuHeight = $.left_panel.height();
 	
 	var windowHeight = $(window).height() - $.navbar_height;
@@ -381,7 +381,7 @@ function nav_page_height() {
 	}
 }
 
-$('#main').resize(function() {
+$('#content').resize(function() {
 	nav_page_height();
 	check_if_mobile_width();
 })
