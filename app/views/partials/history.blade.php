@@ -24,7 +24,7 @@
 
 		<!-- widget content -->
 		<div class="widget-body">
-
+			
 			<table class="table table-bordered table-striped">
 				<thead>
 					<tr>
@@ -40,7 +40,7 @@
 				<tbody>
 				<?php foreach($history as $h){?>
 					<tr>
-						<td>{{$h->character_id}}</td>
+						<td>{{$h->name}}</td>
 						<td>{{$h->change}}</td>
 						<td>{{$h->value}}</td>
 						<td>{{$h->reason}}</td>

@@ -19,6 +19,7 @@
 
 				@include('partials.standings')
 				@include('partials.massep')
+				@include('partials.decay')
 				@include('partials.jabbitTest')
 
 

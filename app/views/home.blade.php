@@ -18,9 +18,9 @@
 			<!-- NEW WIDGET START -->
 			<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
+				@include('partials.register')
 				@include('partials.standings')
 				@include('partials.loot')
-				@include('partials.register')
 
 			</article>
 			<!-- WIDGET END -->

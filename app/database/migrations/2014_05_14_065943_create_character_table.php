@@ -35,6 +35,7 @@ class CreateCharacterTable extends Migration {
 		    $table->boolean('active')->default('1');
 		    $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
 		    $table->enum('class', array('warrior', 'engineer','stalker','medic','spellslinger','esper'));
+		    $table->enum('role', array('tank', 'damage','heal'))->default('damage');;
 			$table->integer('ep')->default('1');
 			$table->integer('gp')->default('100');
 		});

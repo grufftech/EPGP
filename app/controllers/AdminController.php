@@ -18,9 +18,8 @@ class AdminController extends BaseController {
 	public function showHomepage()
 	{
 		if (!Auth::check()){return Redirect::intended('login');}
-		$characters = DB::table('characters')->select(DB::raw('*,ep/gp as pr'))->orderBy('pr','desc')->get();
-		$alphaCharacters = DB::table('characters')->select(DB::raw('*,ep/gp as pr'))->orderBy('name','asc')->get();
-		return View::make('admin',compact('characters','loots','alphaCharacters'));
+		$characters = DB::table('characters')->select(DB::raw('*,ep/gp as pr'))->orderBy('name','asc')->get();
+		return View::make('admin',compact('characters','loots'));
 	}
 	public function login()	{
 		return View::make('login');
@@ -247,6 +246,33 @@ class AdminController extends BaseController {
 		return $basePower * $qualityMultiplier * $typeMultiplier; 
 	}
 
+
+	public function decay(){
+		$characters = DB::table('characters')->get();
+
+		foreach ($characters as $char){
+		DB::table('characters')->where('id', $char->id)->update(array('ep' => $char->ep*0.9,'gp' => $char->gp*0.9));
+		DB::table('character_history')->insert(
+			array(
+				'character_id' => $char->id,
+				'change' => 'ep',
+				'value' => $char->ep*0.1,
+				'reason' => "10% EP Decay",
+			)
+		);
+		DB::table('character_history')->insert(
+			array(
+				'character_id' => $char->id,
+				'change' => 'gp',
+				'value' => $char->gp*0.1,
+				'reason' => "10% GP Decay",
+			)
+		);
+		}
+
+		return Redirect::intended('admin');
+		
+	}
 
 
 

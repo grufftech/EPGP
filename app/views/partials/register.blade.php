@@ -30,10 +30,19 @@
 					<div id="bootstrap-wizard-1" class="col-sm-12">
 						<div class="row">
 							<div class="col-sm-12">
+								@if(Session::has('message'))
+								<div class="alert adjusted alert-danger fade in">
+									<button class="close" data-dismiss="alert">
+										×
+									</button>
+									<i class="fa-fw fa-lg fa fa-exclamation"></i>
+									{{Session::get('message')}}
+								</div>
+								@endif
 								<div class="form-group">
 									<div class="input-group">
-										<span class="input-group-addon"><i class="fa fa-user fa-lg fa-fw"></i></span>
-										{{ Form::text('name','',array('class'=>'form-control input-lg','placeholder'=>'Character Name'));}}
+										<span class="input-group-addon"><i class="fa fa-user"></i></span>
+										{{ Form::text('name','',array('class'=>'form-control input','placeholder'=>'Character Name'));}}
 
 									</div>
 								</div>
@@ -44,8 +53,8 @@
 							<div class="col-sm-12">
 								<div class="form-group">
 									<div class="input-group">
-										<span class="input-group-addon"><i class="fa fa-flag fa-lg fa-fw"></i></span>
-										<select name="class" class="form-control input-lg">
+										<span class="input-group-addon"><i class="fa fa-star"></i></span>
+										<select name="class" class="form-control input">
 											<option value="" selected="selected">Select Class</option>
 											<option value="warrior">Warrior</option>
 											<option value="stalker">Stalker</option>
@@ -53,6 +62,17 @@
 											<option value="medic">Medic</option>
 											<option value="esper">Esper</option>
 											<option value="spellslinger">Spellslinger</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group">
+									<div class="input-group">
+										<span class="input-group-addon"><i class="fa fa-puzzle-piece"></i></span>
+										<select name="class" class="form-control input">
+											<option value="" selected="selected">Select Primary Role</option>
+											<option value="damage">Damage</option>
+											<option value="tank">Tank</option>
+											<option value="heal">Heal</option>
 										</select>
 									</div>
 								</div>

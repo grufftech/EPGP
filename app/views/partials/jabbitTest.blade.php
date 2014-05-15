@@ -32,11 +32,12 @@
 							<div class="col-sm-12">
 								<div class="form-group">
 									<div class="input-group">
-										<span class="input-group-addon"><i class="fa fa-user fa-lg fa-fw"></i></span>
-										{{ Form::text('url','',array('class'=>'form-control input-lg','placeholder'=>'http://www.jabbithole.com/items/footsteps-of-the-pyrodancer-37519'));}}
+										<span class="input-group-addon"><i class="fa fa-user"></i></span>
+										{{ Form::text('url','',array('class'=>'form-control ','placeholder'=>'http://www.jabbithole.com/items/footsteps-of-the-pyrodancer-37519'));}}
 
 									</div>
 								</div>
+
 							{{ Form::submit('Parse',array('class'=>'btn btn-primary'));}}
 							{{ Form::close() }}
 							</div>
