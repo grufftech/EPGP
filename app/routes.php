@@ -11,14 +11,21 @@
 |
 */
 
+/* HomePage */
 Route::get('/', 'HomeController@showHomepage');
+Route::get('/character/{id}', 'HomeController@characterHistory');
 Route::post('/new-character', 'HomeController@newCharacterPost');
 
-
+/* Admin Login */
 Route::get('/login', 'AdminController@login');
 Route::get('/logout', 'AdminController@logout');
 Route::post('/loginPost', 'AdminController@loginPost');
+
+/* Admin functions */
 Route::get('/admin','AdminController@showHomepage');
-
-
-Route::post('/scrapeJabbit', 'AdminController@scrapeJabbit');
+Route::get('/admin/giveLoot/{id}','AdminController@giveLoot');
+Route::post('/admin/giveLoot/{id}','AdminController@giveLootPost');
+Route::get('/admin/modifyEffort/{id}','AdminController@modifyEffort');
+Route::post('/admin/modifyEffort/{id}','AdminController@modifyEffortPost');
+Route::post('/admin/massEffort', 'AdminController@massEffort');
+Route::post('/admin/scrapeJabbit', 'AdminController@scrapeJabbit');

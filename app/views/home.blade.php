@@ -1,34 +1,49 @@
-<!doctype html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>The Drunk Tanks EPGP Stats</title>
-	</style>
-</head>
-<body>
-		<h1> EPGP Player Standings </h1>
-		<?php foreach ($characters as $char){ 
-			print_r($char);
-			echo "<br>";
-		} ?>
-
-		<h1> Latest Loot Distribution </h1>
-
-		<?php foreach ($loots as $loot){ 
-			print_r($loot);
-			echo "<br>";
-		} ?>
+@include('partials.header')
 
 
-		<h1> Create New Character </h1>
-		{{Form::open(array('action' => 'HomeController@newCharacterPost'))}}
-		<label>Name</label>
-		{{ Form::text('name','',array('class'=>'form-control','placeholder'=>'charactername'));}}
-		<label>Class</label>
-		{{Form::select('class', array('warrior' => 'Warrior', 'stalker' => 'Stalker','engineer'=>'Engineer','medic'=>'Medic','spellslinger'=>'Spellslinger','esper'=>'Esper'));}}
+<div id="main" role="main">
+
+	<!-- MAIN CONTENT -->
+	<div id="content" class="container">
+
+	<div class="row">
+		<div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+			<h1 class="page-title txt-color-blueDark"> <a href=/>The Drunk Tanks</a> <span> > EPGP Standings </span></h1>
 		</div>
-		{{ Form::submit('Create!',array('class'=>'btn btn-default'));}}
-		{{ Form::close() }}
-</body>
-</html>
-[<a href='/admin'>admin</a>]
+	</div>
+
+	<!-- widget grid -->
+	<section id="widget-grid" class="">
+
+		<!-- row -->
+		<div class="row">
+
+			<!-- NEW WIDGET START -->
+			<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+				@include('partials.standings')
+				@include('partials.loot')
+				@include('partials.register')
+
+			</article>
+			<!-- WIDGET END -->
+
+
+		</div>
+		<!-- end row -->
+
+
+	</section>
+	<!-- end widget grid -->
+
+	<div class="row">
+		<div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+			<a href='/admin'>Admin</a>
+		</div>
+	</div>
+
+</div>
+</div>
+<!-- END MAIN CONTENT -->
+
+@include('partials.footer')

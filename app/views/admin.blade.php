@@ -1,27 +1,49 @@
-<!doctype html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>The Drunk Tanks EPGP Stats</title>
-	</style>
-</head>
-<body>
-		<h1> EPGP Player Standings </h1>
-		<?php foreach ($characters as $char){ 
-			print_r($char);
-			echo "<br>";
-		} ?>
+@include('partials.header')
 
-</body>
-</html>
-[<a href='/logout'>logout</a>]
+<div id="main" role="main">
 
+	<!-- MAIN CONTENT -->
+	<div id="content" class="container">
 
-
-		<h1> JabbitURL </h1>
-		{{Form::open(array('action' => 'AdminController@scrapeJabbit'))}}
-		<label>url</label>
-		{{ Form::text('url','',array('class'=>'form-control','placeholder'=>'charactername'));}}
+	<div class="row">
+		<div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+			<h1 class="page-title txt-color-blueDark"> <a href=/>The Drunk Tanks</a> <span> > Admin Panel </span></h1>
 		</div>
-		{{ Form::submit('Login!',array('class'=>'btn btn-default'));}}
-		{{ Form::close() }}
+	</div>
+
+	<!-- widget grid -->
+	<section id="widget-grid" class="">
+
+		<!-- row -->
+		<div class="row">
+
+			<!-- NEW WIDGET START -->
+			<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+				@include('partials.standings')
+				@include('partials.massep')
+				@include('partials.jabbitTest')
+ 
+
+
+			</article>
+			<!-- WIDGET END -->
+
+
+		</div>
+		<!-- end row -->
+
+
+	</section>
+	<!-- end widget grid -->
+
+	<div class="row">
+		<div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+			<a href='/logout'>logout</a>
+		</div>
+	</div>
+
+</div>
+<!-- END MAIN CONTENT -->
+
+@include('partials.footer')
