@@ -20,7 +20,13 @@
 
 	<!-- widget div-->
 	<div>
-
+		<div class="alert adjusted alert-info fade in">
+			<button class="close" data-dismiss="alert">
+				×
+			</button>
+			<i class="fa-fw fa-lg fa fa-exclamation"></i>
+			all shown information is sample data for testing purposes.
+		</div>
 		<!-- widget edit box -->
 		<div class="jarviswidget-editbox">
 			<!-- This area used as dropdown edit box -->
