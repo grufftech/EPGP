@@ -31,7 +31,29 @@ class CharacterTableSeeder extends Seeder {
 			array('name' => 'Talvon', 'class' => 'Warrior','ep' => rand(0,1000),'gp' => rand(0,1000)),
 			array('name' => 'Xinit', 'class' => 'Engineer','ep' => rand(0,1000),'gp' => rand(0,1000)),
 			array('name' => 'Random', 'class' => 'Esper','ep' => rand(0,1000),'gp' => rand(0,1000)),
-			array('name' => 'Folkmore', 'class' => 'Spellslinger','ep' => rand(0,1000),'gp' => rand(0,1000))
+			array('name' => 'Folkmore', 'class' => 'Spellslinger','ep' => rand(0,1000),'gp' => rand(0,1000)),
+			array('name' => 'Lisassa', 'class' => 'Esper','ep' => rand(0,1000),'gp' => rand(0,1000)),
+			array('name' => 'Assassanya', 'class' => 'Spellslinger','ep' => rand(0,1000),'gp' => rand(0,1000)),
+			array('name' => 'Lirtadar', 'class' => 'Medic','ep' => rand(0,1000),'gp' => rand(0,1000)),
+			array('name' => 'Marirrast', 'class' => 'Stalker','ep' => rand(0,1000),'gp' => rand(0,1000)),
+			array('name' => 'Frichistan', 'class' => 'Warrior','ep' => rand(0,1000),'gp' => rand(0,1000)),
+			array('name' => 'Iskilsaya', 'class' => 'Engineer','ep' => rand(0,1000),'gp' => rand(0,1000)),
+			array('name' => 'Kachek', 'class' => 'Warrior','ep' => rand(0,1000),'gp' => rand(0,1000)),
+			array('name' => 'Azilek', 'class' => 'Engineer','ep' => rand(0,1000),'gp' => rand(0,1000)),
+			array('name' => 'Kabim', 'class' => 'Esper','ep' => rand(0,1000),'gp' => rand(0,1000)),
+			array('name' => 'Jolajich', 'class' => 'Spellslinger','ep' => rand(0,1000),'gp' => rand(0,1000)),
+			array('name' => 'Lanaqa', 'class' => 'Medic','ep' => rand(0,1000),'gp' => rand(0,1000)),
+			array('name' => 'Tztomelja', 'class' => 'Stalker','ep' => rand(0,1000),'gp' => rand(0,1000)),
+			array('name' => 'Etzlawek', 'class' => 'Warrior','ep' => rand(0,1000),'gp' => rand(0,1000)),
+			array('name' => 'Izlajal', 'class' => 'Engineer','ep' => rand(0,1000),'gp' => rand(0,1000)),
+			array('name' => 'Ixam', 'class' => 'Esper','ep' => rand(0,1000),'gp' => rand(0,1000)),
+			array('name' => 'Tsal', 'class' => 'Spellslinger','ep' => rand(0,1000),'gp' => rand(0,1000)),
+			array('name' => 'Kabimek', 'class' => 'Esper','ep' => rand(0,1000),'gp' => rand(0,1000)),
+			array('name' => 'Lanil', 'class' => 'Spellslinger','ep' => rand(0,1000),'gp' => rand(0,1000)),
+			array('name' => 'Azende', 'class' => 'Medic','ep' => rand(0,1000),'gp' => rand(0,1000)),
+			array('name' => 'Jolypam', 'class' => 'Stalker','ep' => rand(0,1000),'gp' => rand(0,1000)),
+			array('name' => 'Kachende', 'class' => 'Warrior','ep' => rand(0,1000),'gp' => rand(0,1000)),
+			array('name' => 'Izlayam', 'class' => 'Engineer','ep' => rand(0,1000),'gp' => rand(0,1000)),
 		));
     }
 }
@@ -40,38 +62,70 @@ class OneRaidSeeder extends Seeder {
 
     public function run()
     {
-    	$this->gifPoints("One Raid Hour",100);
-    	$this->gifPoints("One Raid Hour",100);
-    	$this->gifPoints("Boss Kill",100);
-    	$this->gifLoots();
-    	$this->gifLoots();
-    	$this->gifLoots();
-    	$this->gifLoots();
-    	$this->gifPoints("One Raid Hour",100);
-    	$this->gifPoints("Boss Kill",100);
-    	$this->gifLoots();
-    	$this->gifLoots();
-    	$this->gifLoots();
-    	$this->gifLoots();
-    	$this->gifPoints("One Raid Hour",100);
-    	$this->gifPoints("Boss Kill",100);
-    	$this->gifLoots();
-    	$this->gifLoots();
-    	$this->gifLoots();
-    	$this->gifLoots();
-    	$this->gifPoints("One Raid Hour",100);
-    	$this->gifPoints("One Raid Hour",100);
-    	$this->gifPoints("Progression Boss Kill",200);
-    	$this->gifLoots();
-    	$this->gifLoots();
-    	$this->gifLoots();
-    	$this->gifPoints("One Raid Hour",100);
-    	$this->gifPoints("One Raid Hour",100);
-    	$this->gifPoints("Progression Boss Kill (doubled)",400);
-    	$this->gifLoots();
-    	$this->gifLoots();
-    	$this->gifLoots();
-    	$this->gifLoots();
+		$this->gifPoints("One Raid Hour",100);
+		$this->gifPoints("One Raid Hour",100);
+		$this->gifPoints("Boss Kill",100);
+		$this->gifLoots();
+		$this->gifLoots();
+		$this->gifLoots();
+		$this->gifLoots();
+		$this->gifPoints("One Raid Hour",100);
+		$this->gifPoints("Boss Kill",100);
+		$this->gifLoots();
+		$this->gifLoots();
+		$this->gifLoots();
+		$this->gifLoots();
+		$this->gifPoints("One Raid Hour",100);
+		$this->gifPoints("Boss Kill",100);
+		$this->gifLoots();
+		$this->gifLoots();
+		$this->gifLoots();
+		$this->gifLoots();
+		$this->gifPoints("One Raid Hour",100);
+		$this->gifPoints("One Raid Hour",100);
+		$this->gifPoints("Progression Boss Kill",200);
+		$this->gifLoots();
+		$this->gifLoots();
+		$this->gifLoots();
+		$this->gifPoints("One Raid Hour",100);
+		$this->gifPoints("One Raid Hour",100);
+		$this->gifPoints("Progression Boss Kill (doubled)",400);
+		$this->gifLoots();
+		$this->gifLoots();
+		$this->gifLoots();
+		$this->gifLoots();
+		$this->gifPoints("One Raid Hour",100);
+		$this->gifPoints("One Raid Hour",100);
+		$this->gifPoints("Boss Kill",100);
+		$this->gifLoots();
+		$this->gifLoots();
+		$this->gifLoots();
+		$this->gifLoots();
+		$this->gifPoints("One Raid Hour",100);
+		$this->gifPoints("Boss Kill",100);
+		$this->gifLoots();
+		$this->gifLoots();
+		$this->gifLoots();
+		$this->gifLoots();
+		$this->gifPoints("One Raid Hour",100);
+		$this->gifPoints("Boss Kill",100);
+		$this->gifLoots();
+		$this->gifLoots();
+		$this->gifLoots();
+		$this->gifLoots();
+		$this->gifPoints("One Raid Hour",100);
+		$this->gifPoints("One Raid Hour",100);
+		$this->gifPoints("Progression Boss Kill",200);
+		$this->gifLoots();
+		$this->gifLoots();
+		$this->gifLoots();
+		$this->gifPoints("One Raid Hour",100);
+		$this->gifPoints("One Raid Hour",100);
+		$this->gifPoints("Progression Boss Kill (doubled)",400);
+		$this->gifLoots();
+		$this->gifLoots();
+		$this->gifLoots();
+		$this->gifLoots();
     }
 
     public function gifPoints($reason,$value){
@@ -104,7 +158,7 @@ class OneRaidSeeder extends Seeder {
 		$loots[] = ARRAY('loot_url' => 'http://www.jabbithole.com/items/gloomskin-treads-40056','loot_name'=>'Gloomskin Treads','loot_slot'=>'Feet','loot_quality' => 'Superb');
 		$loots[] = ARRAY('loot_url' => 'http://www.jabbithole.com/items/panzerschreck-2708','loot_name'=>'panzerschreck','loot_slot'=>'Weapon','loot_quality' => 'Superb');
 		$loots[] = ARRAY('loot_url' => 'http://www.jabbithole.com/items/hardened-carapace-shoulders-40051','loot_name'=>'Hardened Carapace Shoulders','loot_slot'=>'Shoulder','loot_quality' => 'Artifact');
-		$lootid = rand(0,8);
+		$lootid = rand(0,9);
 		$item_value = $this->calculateValue($loots[$lootid]['loot_quality'],$loots[$lootid]['loot_slot']);
 		DB::table('character_history')->insert(
 			array(

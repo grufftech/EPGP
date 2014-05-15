@@ -36,7 +36,7 @@
 
 	<div class="row">
 		<div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
-			<a href='/logout'>logout</a>
+			<a href='/admin'><i class="fa fa-gear"></i> Admin</a><?if (Auth::check()){?><br>   <a href='/logout'><i class="fa fa-sign-out"></i> Logout</a> <? } ?>
 		</div>
 	</div>
 </div>
