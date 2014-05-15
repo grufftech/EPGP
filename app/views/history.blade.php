@@ -1,7 +1,5 @@
 @include('partials.header')
 
-<div id="main" role="main">
-
 	<!-- MAIN CONTENT -->
 	<div id="content" class="container">
 
@@ -43,7 +41,6 @@
 		</div>
 	</div>
 
-</div>
 </div>
 <!-- END MAIN CONTENT -->
 

@@ -114,19 +114,19 @@ class AdminController extends BaseController {
 				break;
 			case "4hr":
 				$value = 400;
-				$reason = "1 Hour of Raiding";
+				$reason = "4 Hours of Raiding";
 				break;
 			case "boss":
 				$value = 100;
-				$reason = "1 Hour of Raiding";
+				$reason = "Boss Kill";
 				break;
 			case "bigboss":
 				$value = 200;
-				$reason = "1 Hour of Raiding";
+				$reason = "Progression Boss Kill";
 				break;
 			case "rapeboss":
 				$value = 400;
-				$reason = "1 Hour of Raiding";
+				$reason = "Progression Boss Kill (doubled)";
 				break;
 		}	
 
