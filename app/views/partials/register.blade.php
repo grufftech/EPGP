@@ -74,7 +74,7 @@
 										</select>
 									</div>
 								</div>
-							{{ Form::submit('Create Character',array('class'=>'btn btn-primary'));}}
+							{{ Form::submit('Create Character',array('class'=>'btn btn-success'));}}
 							{{ Form::close() }}
 							</div>
 
