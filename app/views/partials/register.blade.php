@@ -68,7 +68,7 @@
 								<div class="form-group">
 									<div class="input-group">
 										<span class="input-group-addon"><i class="fa fa-puzzle-piece"></i></span>
-										<select name="class" class="form-control input">
+										<select name="role" class="form-control input">
 											<option value="" selected="selected">Select Primary Role</option>
 											<option value="damage">Damage</option>
 											<option value="tank">Tank</option>

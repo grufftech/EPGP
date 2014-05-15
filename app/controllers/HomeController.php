@@ -21,7 +21,7 @@ class HomeController extends BaseController {
 		$loots = DB::table('character_history')
             ->join('characters', 'characters.id', '=', 'character_history.character_id')
             ->select('character_history.*','characters.name')
-			->where('change','gp')
+			->whereNotNull('loot_url')
 			->orderBy('id','desc')
 			->take(10)
 			->get();
