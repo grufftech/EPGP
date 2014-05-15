@@ -50,7 +50,7 @@ class HomeController extends BaseController {
 			return Redirect::back()->with('message', 'Please select a primary role.');
 		}
 		DB::table('characters')->insert(
-			array('name' => Input::get('name'), 'class' => Input::get('class'))
+			array('name' => Input::get('name'), 'class' => Input::get('class'),'role' => Input::get('role'))
 		);
 		return Redirect::action('HomeController@showHomepage');
 	}
