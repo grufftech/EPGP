@@ -1,5 +1,5 @@
 <!-- start reg widget -->
-<div class="jarviswidget jarviswidget-color-darken jarviswidget-sortable" id="wid-id-jabtest" data-widget-editbutton="false" data-widget-deletebutton="false" role="widget" style="">
+<div class="jarviswidget jarviswidget-color-darken jarviswidget-sortable" id="wid-id-jabtest" data-widget-editbutton="false" data-widget-deletebutton="false" role="widget" style="" data-widget-colorbutton="false">
 	<!-- widget options:
 	usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
 

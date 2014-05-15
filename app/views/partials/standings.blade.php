@@ -1,5 +1,5 @@
 <!-- Widget ID (each widget will need unique ID)-->
-<div class="jarviswidget jarviswidget-color-darken" id="wid-id-standings" data-widget-editbutton="false" data-widget-deletebutton="false">
+<div class="jarviswidget jarviswidget-color-darken" id="wid-id-standings" data-widget-editbutton="false" data-widget-deletebutton="false" data-widget-colorbutton="false">
 	<!-- widget options:
 	usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
 
@@ -46,6 +46,10 @@
 						<th>Effort Points</th>
 						<th>Gear Points</th>
 						<th>Loot Priority</th>
+						<?if (Auth::check()){?>
+						<th>Admin Edit</th>
+						<th>Admin Delete</th>
+						<? } ?>
 					</tr>
 				</thead>
 				<tbody>
@@ -61,6 +65,10 @@
 						<td>{{$char->ep}}</td>
 						<td>{{$char->gp}}</td>
 						<td>{{$char->pr}}</td>
+						<?if (Auth::check()){?>
+						<td><a href={{action('AdminController@editCharacter', $char->id)}}><i class="fa  fa-gear"></i> Edit</a></td>
+						<td><a href={{action('AdminController@deleteCharacter', $char->id)}}><i class="fa  fa-times-circle"></i> Delete</a></td>
+						<? } ?>
 					</tr>
 				<?php } ?>
 					

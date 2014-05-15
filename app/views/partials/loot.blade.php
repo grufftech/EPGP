@@ -1,5 +1,5 @@
 <!-- Widget ID (each widget will need unique ID)-->
-<div class="jarviswidget jarviswidget-color-red" id="wid-id-loots" data-widget-editbutton="false" data-widget-deletebutton="false">
+<div class="jarviswidget jarviswidget-color-red" id="wid-id-loots" data-widget-editbutton="false" data-widget-deletebutton="false" data-widget-colorbutton="false" data-widget-colorbutton="false">
 	<!-- widget options:
 	usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
 
@@ -37,7 +37,7 @@
 				<tbody>
 				<?php foreach($loots as $loot){?>
 					<tr>
-						<td>{{$loot->name}}</td>
+						<td><a href={{$url = action('HomeController@characterHistory',array('id' => $loot->character_id))}}>{{ucfirst($loot->name)}}</a></td>
 						<td><a target=_blank href={{$loot->loot_url}}>{{$loot->loot_name}}</a></td>
 						<td>{{$loot->loot_slot}}</td>
 						<td>{{$loot->value}}</td>

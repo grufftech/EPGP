@@ -43,6 +43,27 @@ class AdminController extends BaseController {
 		return View::make('backend.press.photosEdit',compact('photo','tags'));
 	}*/
 
+	public function deleteCharacter($characterID){
+		if (!Auth::check()){return Redirect::intended('login');}
+		DB::table('characters')->where('id', $characterID)->delete();
+		return Redirect::intended('admin');
+	}
+	public function editCharacter($characterID){
+		if (!Auth::check()){return Redirect::intended('login');}
+		$character = DB::table('characters')->where('id',$characterID)->first();
+		return View::make('editCharacter',compact('character'));
+	}
+	public function editCharacterPost($characterID){
+		if (!Auth::check()){return Redirect::intended('login');}
+		$character = DB::table('characters')->where('id',$characterID)->first();
+		
+		DB::table('characters')
+            ->where('id', $character->id)
+            ->update(array('name'=>Input::get('name'),'class'=>Input::get('class'),'role'=>Input::get('role')));
+
+		return Redirect::intended('admin');
+	}
+
 	public function giveLoot($characterID){
 		if (!Auth::check()){return Redirect::intended('login');}
 		$character = DB::table('characters')->where('id',$characterID)->first();
