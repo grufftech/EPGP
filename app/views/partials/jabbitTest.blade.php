@@ -32,7 +32,7 @@
 							<div class="col-sm-12">
 								<div class="form-group">
 									<div class="input-group">
-										<span class="input-group-addon"><i class="fa fa-user"></i></span>
+										<span class="input-group-addon"><i class="fa fa-link"></i></span>
 										{{ Form::text('url','',array('class'=>'form-control ','placeholder'=>'http://www.jabbithole.com/items/footsteps-of-the-pyrodancer-37519'));}}
 
 									</div>
