@@ -1,5 +1,5 @@
 <!-- start reg widget -->
-<div class="jarviswidget jarviswidget-color-darken jarviswidget-sortable" id="wid-id-jabtest" data-widget-editbutton="false" data-widget-deletebutton="false" role="widget" style="">
+<div class="jarviswidget jarviswidget-color-darken jarviswidget-sortable" id="wid-id-jabtest" data-widget-editbutton="false" data-widget-deletebutton="false" role="widget" style="" data-widget-colorbutton="false">
 	<!-- widget options:
 	usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
 
@@ -32,11 +32,12 @@
 							<div class="col-sm-12">
 								<div class="form-group">
 									<div class="input-group">
-										<span class="input-group-addon"><i class="fa fa-user fa-lg fa-fw"></i></span>
-										{{ Form::text('url','',array('class'=>'form-control input-lg','placeholder'=>'http://www.jabbithole.com/items/footsteps-of-the-pyrodancer-37519'));}}
+										<span class="input-group-addon"><i class="fa fa-link"></i></span>
+										{{ Form::text('url','',array('class'=>'form-control ','placeholder'=>'http://www.jabbithole.com/items/footsteps-of-the-pyrodancer-37519'));}}
 
 									</div>
 								</div>
+
 							{{ Form::submit('Parse',array('class'=>'btn btn-primary'));}}
 							{{ Form::close() }}
 							</div>

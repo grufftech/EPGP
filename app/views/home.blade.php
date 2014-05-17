@@ -18,9 +18,9 @@
 			<!-- NEW WIDGET START -->
 			<article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
+				@include('partials.register')
 				@include('partials.standings')
 				@include('partials.loot')
-				@include('partials.register')
 
 			</article>
 			<!-- WIDGET END -->
@@ -35,7 +35,7 @@
 
 	<div class="row">
 		<div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
-			<a href='/admin'>Admin</a>
+			<a href='/admin'><i class="fa fa-gear"></i> Admin</a><?if (Auth::check()){?><br>   <a href='/logout'><i class="fa fa-sign-out"></i> Logout</a> <? } ?>
 		</div>
 	</div>
 

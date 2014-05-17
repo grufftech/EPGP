@@ -29,3 +29,7 @@ Route::get('/admin/modifyEffort/{id}','AdminController@modifyEffort');
 Route::post('/admin/modifyEffort/{id}','AdminController@modifyEffortPost');
 Route::post('/admin/massEffort', 'AdminController@massEffort');
 Route::post('/admin/scrapeJabbit', 'AdminController@scrapeJabbit');
+Route::post('/admin/decay','AdminController@decay');
+Route::get('/admin/edit/user/{id}','AdminController@editCharacter');
+Route::post('/admin/edit/user/{id}','AdminController@editCharacterPost');
+Route::get('/admin/delete/user/{id}','AdminController@deleteCharacter');

@@ -1,6 +1,6 @@
 
 <!-- Widget ID (each widget will need unique ID)-->
-<div class="jarviswidget jarviswidget-color-red" id="wid-id-hist" data-widget-editbutton="false" data-widget-deletebutton="false">
+<div class="jarviswidget jarviswidget-color-red" id="wid-id-hist" data-widget-editbutton="false" data-widget-deletebutton="false" data-widget-colorbutton="false">
 	<!-- widget options:
 	usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
 
@@ -24,7 +24,7 @@
 
 		<!-- widget content -->
 		<div class="widget-body">
-
+			
 			<table class="table table-bordered table-striped">
 				<thead>
 					<tr>
@@ -40,7 +40,7 @@
 				<tbody>
 				<?php foreach($history as $h){?>
 					<tr>
-						<td>{{$h->character_id}}</td>
+						<td>{{$h->name}}</td>
 						<td>{{$h->change}}</td>
 						<td>{{$h->value}}</td>
 						<td>{{$h->reason}}</td>
