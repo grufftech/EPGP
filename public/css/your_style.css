@@ -17,3 +17,8 @@
  * - BODY
  * - CUSTOM STYLES
  */
+
+body div.spacer {
+    margin:15px 0px 15px 0px;
+    clear:both;
+}

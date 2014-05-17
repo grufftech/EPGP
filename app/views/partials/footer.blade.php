@@ -55,6 +55,15 @@
 
 		<!-- FastClick: For mobile devices -->
 		<script src="/js/plugin/fastclick/fastclick.js"></script>
+                
+                <!--JQUERY: DataTables-->
+                <script type="text/javascript" src="js/plugin/datatables/jquery.dataTables-cust.min.js"></script>
+                <script type="text/javascript" src="js/plugin/datatables/ColReorder.min.js"></script>
+                <script type="text/javascript" src="js/plugin/datatables/FixedColumns.min.js"></script>
+                <script type="text/javascript" src="js/plugin/datatables/ColVis.min.js"></script>
+                <script type="text/javascript" src="js/plugin/datatables/ZeroClipboard.js"></script>
+                <script type="text/javascript" src="js/plugin/datatables/media/js/TableTools.min.js"></script>
+                <script type="text/javascript" src="js/plugin/datatables/DT_bootstrap.js"></script>
 
 		<!--[if IE 7]>
 
@@ -92,7 +101,14 @@
 		})();
 
 		</script>
-
+                <script>
+                    $(document).ready(function() {
+                        $('#character_table').dataTable( {
+                            "bPaginate": false,
+                            "bInfo": false} 
+                        );
+                    } );
+                </script>
 	</body>
 
 </html>
