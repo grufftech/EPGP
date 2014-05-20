@@ -106,7 +106,7 @@
                         $('#character_table').dataTable( {
                             "bPaginate": false,
                             "bInfo": false,
-                            "aaSorting": [[4,'desc']]
+                            "aaSorting": [[5,'desc']]
                         } );
                     } );
                 </script>
