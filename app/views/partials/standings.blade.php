@@ -50,6 +50,7 @@
                                                 <th>Admin GP</th>
                                                 <? } ?>
                                                 <th>Class</th>
+                                                <th>Role</th>
                                                 <th>Effort Points</th>
                                                 <th>Gear Points</th>
                                                 <th>Loot Priority</th>
@@ -68,6 +69,7 @@
                                                 <td><a href={{action('AdminController@giveLoot', $char->id)}}>Award Gear</a></td>
                                                 <? } ?>
                                                 <td>{{ucfirst($char->class)}}</td>
+                                                <td>{{ucfirst($char->role)}}</td>
                                                 <td>{{$char->ep}}</td>
                                                 <td>{{$char->gp}}</td>
                                                 <td>{{$char->pr}}</td>
