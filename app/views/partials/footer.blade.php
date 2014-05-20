@@ -105,8 +105,9 @@
                     $(document).ready(function() {
                         $('#character_table').dataTable( {
                             "bPaginate": false,
-                            "bInfo": false} 
-                        );
+                            "bInfo": false,
+                            "aaSorting": [[4,'desc']]
+                        } );
                     } );
                 </script>
 	</body>
