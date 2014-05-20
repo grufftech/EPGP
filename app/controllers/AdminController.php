@@ -128,6 +128,12 @@ class AdminController extends BaseController {
 		$chars = Input::get("chars");
 
 		switch(Input::get("new_effort")){
+			case "start":
+				$value = 40;
+				$reason = "Early to Raid Bonus";
+			case "end":
+				$value = 60;
+				$reason = "End of Raid Bonus";
 			case "1hr":
 				$value = 100;
 				$reason = "1 Hour of Raiding";

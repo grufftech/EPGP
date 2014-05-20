@@ -1,5 +1,3 @@
-
-
 <!-- Widget ID (each widget will need unique ID)-->
 <div class="jarviswidget jarviswidget-color-darken" id="wid-id-standings" data-widget-editbutton="false" data-widget-deletebutton="false" data-widget-colorbutton="false">
 	<!-- widget options:
@@ -29,59 +27,53 @@
 			<i class="fa-fw fa-lg fa fa-exclamation"></i>
 			all shown information is sample data for testing purposes.
 		</div>
-		<!-- widget edit box -->
-		<div class="jarviswidget-editbox">
-			<!-- This area used as dropdown edit box -->
+        <p>
+                EPGP is a relational reward system for WildStar. It is an alternative DKP system in which your loot buying power is defined by the ratio of your effort and rewards points instead of their difference.
+        </p>
+        <div class="spacer">&nbsp;</div>
+<!-- widget content -->
+            <div class="widget-body">    
+                <table id="character_table" class="table table-bordered table-striped table-hover">
+                        <thead>
+                                <tr>
+                                        <th>Name</th>
+                                        <?if (Auth::check()){?>
+                                        <th>Admin EP</th>
+                                        <th>Admin GP</th>
+                                        <? } ?>
+                                        <th>Class</th>
+                                        <th>Role</th>
+                                        <th>Effort Points</th>
+                                        <th>Gear Points</th>
+                                        <th>Loot Priority</th>
+                                        <?if (Auth::check()){?>
+                                        <th>Admin Edit</th>
+                                        <th>Admin Delete</th>
+                                        <? } ?>
+                                </tr>
+                        </thead>
+                        <tbody>
+                        <?php foreach($characters as $char){ ?>
+                                <tr>
+                                        <td><a href={{$url = action('HomeController@characterHistory',array('id' => $char->id))}}>{{ucfirst($char->name)}}</a></td>
+                                        <?if (Auth::check()){?>
+                                        <td><a href={{action('AdminController@modifyEffort', $char->id)}}>Modify Effort</a></td>
+                                        <td><a href={{action('AdminController@giveLoot', $char->id)}}>Award Gear</a></td>
+                                        <? } ?>
+                                        <td>{{ucfirst($char->class)}}</td>
+                                        <td>{{ucfirst($char->role)}}</td>
+                                        <td>{{$char->ep}}</td>
+                                        <td>{{$char->gp}}</td>
+                                        <td>{{$char->pr}}</td>
+                                        <?if (Auth::check()){?>
+                                        <td><a href={{action('AdminController@editCharacter', $char->id)}}><i class="fa  fa-gear"></i> Edit</a></td>
+                                        <td><a href={{action('AdminController@deleteCharacter', $char->id)}}><i class="fa  fa-times-circle"></i> Delete</a></td>
+                                        <? } ?>
+                                </tr>
+                        <?php } ?>
 
-		</div>
-		<!-- end widget edit box -->
-                <p>
-                        EPGP is a relational reward system for WildStar. It is an alternative DKP system in which your loot buying power is defined by the ratio of your effort and rewards points instead of their difference.
-                </p>
-                <div class="spacer">&nbsp;</div>
-		<!-- widget content -->
-                    <div class="widget-body">    
-                        <table id="character_table" class="table table-bordered table-striped table-hover">
-                                <thead>
-                                        <tr>
-                                                <th>Name</th>
-                                                <?if (Auth::check()){?>
-                                                <th>Admin EP</th>
-                                                <th>Admin GP</th>
-                                                <? } ?>
-                                                <th>Class</th>
-                                                <th>Role</th>
-                                                <th>Effort Points</th>
-                                                <th>Gear Points</th>
-                                                <th>Loot Priority</th>
-                                                <?if (Auth::check()){?>
-                                                <th>Admin Edit</th>
-                                                <th>Admin Delete</th>
-                                                <? } ?>
-                                        </tr>
-                                </thead>
-                                <tbody>
-                                <?php foreach($characters as $char){ ?>
-                                        <tr>
-                                                <td><a href={{$url = action('HomeController@characterHistory',array('id' => $char->id))}}>{{ucfirst($char->name)}}</a></td>
-                                                <?if (Auth::check()){?>
-                                                <td><a href={{action('AdminController@modifyEffort', $char->id)}}>Modify Effort</a></td>
-                                                <td><a href={{action('AdminController@giveLoot', $char->id)}}>Award Gear</a></td>
-                                                <? } ?>
-                                                <td>{{ucfirst($char->class)}}</td>
-                                                <td>{{ucfirst($char->role)}}</td>
-                                                <td>{{$char->ep}}</td>
-                                                <td>{{$char->gp}}</td>
-                                                <td>{{$char->pr}}</td>
-                                                <?if (Auth::check()){?>
-                                                <td><a href={{action('AdminController@editCharacter', $char->id)}}><i class="fa  fa-gear"></i> Edit</a></td>
-                                                <td><a href={{action('AdminController@deleteCharacter', $char->id)}}><i class="fa  fa-times-circle"></i> Delete</a></td>
-                                                <? } ?>
-                                        </tr>
-                                <?php } ?>
-
-                                </tbody>
-                        </table>
+                        </tbody>
+                </table>
 		</div>
 		<!-- end widget content -->
 

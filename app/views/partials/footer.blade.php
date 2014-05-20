@@ -101,15 +101,19 @@
 		})();
 
 		</script>
-                <script>
-                    $(document).ready(function() {
-                        $('#character_table').dataTable( {
-                            "bPaginate": false,
-                            "bInfo": false,
-                            "aaSorting": [[5,'desc']]
-                        } );
-                    } );
-                </script>
+        <script>
+            $(document).ready(function() {
+                $('#character_table').dataTable( {
+                    "bPaginate": false,
+                    "bInfo": false,
+                    <?if (Auth::check()){?>
+                    	"aaSorting": [[7,'desc']]
+                    <? }else {?>
+                    	"aaSorting": [[5,'desc']]
+                    <? } ?>
+                } );
+            } );
+        </script>
 	</body>
 
 </html>
