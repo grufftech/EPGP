@@ -49,6 +49,10 @@ class HomeController extends BaseController {
 		if (!Input::get('role')){
 			return Redirect::back()->with('message', 'Please select a primary role.');
 		}
+		if (DB::table('characters')->where('name',Input::get('name'))->first()){
+			return Redirect::back()->with('message', 'Character name already exists.');
+		}
+
 		DB::table('characters')->insert(
 			array('name' => Input::get('name'), 'class' => Input::get('class'),'role' => Input::get('role'))
 		);
