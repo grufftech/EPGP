@@ -14,10 +14,10 @@
 
 					<fieldset>
 						<section>
-							<label class="label">URL (<a href=http://www.jabbithole.com/items target=_blank>Jabbit</a>)</label>
+							<label class="label">URL (<a href=http://wildstar.datminer.com/ target=_blank>DatMiner</a>)</label>
 							<label class="input"> <i class="icon-append fa fa-external-link-square"></i>
 								{{ Form::text('url','',array());}}
-								<b class="tooltip tooltip-top-right"><i class="fa fa-external-link-square txt-color-teal"></i> jabbitURL</b></label>
+								<b class="tooltip tooltip-top-right"><i class="fa fa-external-link-square txt-color-teal"></i> DatMiner</b></label>
 						</section>
 					</fieldset>
 					<footer>
