@@ -74,25 +74,25 @@ class AdminController extends BaseController {
 		$character = DB::table('characters')->where('id',$characterID)->first();
 		$url = Input::get('url');
 		$page = file_get_contents($url);
-		$item_name = $this->jabbitName($page);
-		$item_quality = $this->jabbitQuality($page);
-		$item_type = $this->jabbitType($page);
-		$item_value = $this->calculateValue($item_quality,$item_type);
+		$itemName = $this->getName($page);
+		$itemType = $this->getType($page);
+		$itemQuality = $this->getQuality($page);
+		$itemCost = $this->calculateValue($itemQuality,$itemType);
 		DB::table('character_history')->insert(
 			array(
 				'character_id' => $character->id,
 				'change' => 'gp',
-				'value' => $item_value,
+				'value' => $itemCost,
 				'reason' => "Loot",
 				'loot_url' => $url,
-				'loot_name' => $item_name,
-				'loot_slot' => $item_type,
+				'loot_name' => $itemName,
+				'loot_slot' => $itemType,
 			)
 		);
 
 		DB::table('characters')
             ->where('id', $character->id)
-            ->update(array('gp' => $character->gp + $item_value));
+            ->update(array('gp' => $character->gp + $itemCost));
 
 		return Redirect::intended('admin');
 
@@ -177,59 +177,50 @@ class AdminController extends BaseController {
 		return Redirect::intended('admin');
 	}
 
-
-
-	public function scrapeJabbit(){
+	public function scrape(){
 		if (!Auth::check()){return Redirect::intended('login');}
 		$url = Input::get('url');
 		echo "URL: ".$url."<br>";
 		$page = file_get_contents($url);
-		$item_name = $this->jabbitName($page);
-		echo "Name: ".$item_name."<br>";
-		$item_quality = $this->jabbitQuality($page);
-		echo "Quality: ".$item_quality."<br>";
-		$item_type = $this->jabbitType($page);
-		echo "Type: ".$item_type."<br>";
-		$item_value = $this->calculateValue($item_quality,$item_type);
-		echo "Value:".$item_value."<br>";
+		$itemName = $this->getName($page);
+		$itemType = $this->getType($page);
+		$itemQuality = $this->getQuality($page);
+		$itemCost = $this->calculateValue($itemQuality,$itemType);
+		echo "Name: ".$itemName."<br>";
+		echo "Type: ".$itemType."<br>";
+		echo "Quality: ".$itemQuality."<br>";
+		echo "Value: ".$itemCost."<br>";
+		echo "<a href=/admin>Back</a><br>";
 	}
 
-	public function jabbitName($jabbit){
+	public function getName($code){
 		if (!Auth::check()){return Redirect::intended('login');}
 		$matches = ARRAY();
-		preg_match('/<div class="jhttttt">(.*)<\/div>/',$jabbit,$matches);
-		if ($matches[1]){
-			return $matches[1];
-		}else{
-			return false;
+		preg_match('/<title>(.*) - Item - Wildstar<\/title>/',$code,$matches);
+		if ($matches){
+			return trim(ltrim($matches[1]));
 		}
 	}
-	public function jabbitQuality($jabbit){
+
+	public function getType($code){
 		if (!Auth::check()){return Redirect::intended('login');}
 		$matches = ARRAY();
-		preg_match('/<span class="q[0-9]">(.*)<\/span>/',$jabbit,$matches);
-		if ($matches[1]){
-			return $matches[1];
-		}else{
-			return false;
+		preg_match('/<tr>[\s]*<td>[\s]*<span class="blue">[\s]*Slot[\s]*<\/span>[\s]*<\/td>[\s]*<td class="grey" style="text-align: right;">[\s]*(.*?)[\s]*<\/td>[\s]*<\/tr>/',$code,$matches);
+		if ($matches){
+			return trim(ltrim($matches[1]));
 		}
 	}
-	public function jabbitType($jabbit){
+
+	public function getQuality($code){
 		if (!Auth::check()){return Redirect::intended('login');}
 		$matches = ARRAY();
-		preg_match('/<div class="jhtttts">(.*)<\/div>/',$jabbit,$matches);
-
-		$weapon_array = ARRAY("Pistols","Claws","Paddles","Psyblade","Heavy Gun","Greatsword");
-		if (in_array($matches[1],$weapon_array)){
-			return "Weapon";
+		preg_match('/<span class="bind_flags" style="color:#.{0,6}?">[\s]*(.*?)[\s]*<\/span>/',$code,$matches);
+		if ($matches){
+			return trim(ltrim($matches[1]));
 		}
-
-		if ($matches[1] == "Energy Shield"){ return "Shields";}
-
-		$match = explode("-",$matches[1]);
-		return trim(ltrim($match[2]));
-
 	}
+
+
 	public function calculateValue($quality,$type){
 		if (!Auth::check()){return Redirect::intended('login');}
 		$basePower = 50;
@@ -250,19 +241,25 @@ class AdminController extends BaseController {
 			case "Superb":
 				$qualityMultiplier = 2; 
 				break;
+			case "Legendary ★":
+				$qualityMultiplier = 3; 
+				break;
 			case "Legendary":
 				$qualityMultiplier = 3; 
 				break;
 			case "Artifact":
 				$qualityMultiplier = 5; 
 				break;
+			default:
+				$qualityMultiplier = 0;
+				break;
 		}
 
 		switch($type){
-			case "Weapon":
+			case "WeaponPrimary":
 				$typeMultiplier = 1.5; 
 				break;
-			case "Shields":
+			case "ArmorShields":
 				$typeMultiplier = 1.25; 
 				break;
 			default:

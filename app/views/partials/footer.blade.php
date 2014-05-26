@@ -56,20 +56,39 @@
 		<!-- FastClick: For mobile devices -->
 		<script src="/js/plugin/fastclick/fastclick.js"></script>
                 
-                <!--JQUERY: DataTables-->
-                <script type="text/javascript" src="js/plugin/datatables/jquery.dataTables-cust.min.js"></script>
-                <script type="text/javascript" src="js/plugin/datatables/ColReorder.min.js"></script>
-                <script type="text/javascript" src="js/plugin/datatables/FixedColumns.min.js"></script>
-                <script type="text/javascript" src="js/plugin/datatables/ColVis.min.js"></script>
-                <script type="text/javascript" src="js/plugin/datatables/ZeroClipboard.js"></script>
-                <script type="text/javascript" src="js/plugin/datatables/media/js/TableTools.min.js"></script>
-                <script type="text/javascript" src="js/plugin/datatables/DT_bootstrap.js"></script>
+		<!--JQUERY: DataTables-->
+		<script type="text/javascript" src="js/plugin/datatables/jquery.dataTables-cust.min.js"></script>
+		<script type="text/javascript" src="js/plugin/datatables/ColReorder.min.js"></script>
+		<script type="text/javascript" src="js/plugin/datatables/FixedColumns.min.js"></script>
+		<script type="text/javascript" src="js/plugin/datatables/ColVis.min.js"></script>
+		<script type="text/javascript" src="js/plugin/datatables/ZeroClipboard.js"></script>
+		<script type="text/javascript" src="js/plugin/datatables/media/js/TableTools.min.js"></script>
+		<script type="text/javascript" src="js/plugin/datatables/DT_bootstrap.js"></script>
 
 		<!--[if IE 7]>
 
 		<h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
 
 		<![endif]-->
+
+		<script> 
+			var wildstar_datminer_config = 
+			{
+			//language: 1: English, 2: Deutsch, 3: Francais
+			"language": 1, 
+
+			//Do you want to replace the name of the link?
+			"name_replace": true, 
+
+			//Do you want to show quality colors?
+			"color_show": true,
+
+			//Do you want to have an icon added?
+			"icon_replace": true
+
+			}
+		</script>
+		<script src="http://tooltipz.com/scripts/wildtips.js"></script>
 
 		<!-- MAIN APP JS FILE -->
 		<script src="/js/app.js"></script>

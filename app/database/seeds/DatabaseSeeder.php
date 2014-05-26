@@ -312,16 +312,66 @@ class OneRaidSeeder extends Seeder {
     	$char = DB::table('characters')->select(DB::raw('*,ep/gp as pr'))->orderBy('pr','desc')->first();
 
 		$loots = ARRAY();
-		$loots[] = ARRAY('loot_url' => 'http://www.jabbithole.com/items/psychedelic-claws-9206','loot_name'=>'Psychedelic Claws','loot_slot'=>'Weapon','loot_quality' => 'Superb');
-		$loots[] = ARRAY('loot_url' => 'http://www.jabbithole.com/items/psychedelic-pistols-9207','loot_name'=>'Psychedelic Pistols','loot_slot'=>'Weapon','loot_quality' => 'Superb');
-		$loots[] = ARRAY('loot_url' => 'http://www.jabbithole.com/items/ikthian-prototype-chestguard-9493','loot_name'=>'Ikthian Prototype Chestguard','loot_slot'=>'Chest','loot_quality' => 'Legendary');
-		$loots[] = ARRAY('loot_url' => 'http://www.jabbithole.com/items/belligerents-bombarding-shin-plates-15412','loot_name'=>'Belligerent\'s Bombarding Shin Plates','loot_slot'=>'Legs','loot_quality' => 'Artifact');
-		$loots[] = ARRAY('loot_url' => 'http://www.jabbithole.com/items/belligerents-bombarding-photon-cannon-15416','loot_name'=>'Belligerent\'s Bombarding Photon Cannon','loot_slot'=>'Weapon','loot_quality' => 'Legendary');
-		$loots[] = ARRAY('loot_url' => 'http://www.jabbithole.com/items/data-projectionists-shroud-44487','loot_name'=>'Data Projectionist\'s Shroud','loot_slot'=>'Shoulder','loot_quality' => 'Superb');
-		$loots[] = ARRAY('loot_url' => 'http://www.jabbithole.com/items/heretics-invigorating-striders-19128','loot_name'=>'Heretic\'s Invigorating Striders','loot_slot'=>'Feet','loot_quality' => 'Legendary');
-		$loots[] = ARRAY('loot_url' => 'http://www.jabbithole.com/items/gloomskin-treads-40056','loot_name'=>'Gloomskin Treads','loot_slot'=>'Feet','loot_quality' => 'Superb');
-		$loots[] = ARRAY('loot_url' => 'http://www.jabbithole.com/items/panzerschreck-2708','loot_name'=>'panzerschreck','loot_slot'=>'Weapon','loot_quality' => 'Superb');
-		$loots[] = ARRAY('loot_url' => 'http://www.jabbithole.com/items/hardened-carapace-shoulders-40051','loot_name'=>'Hardened Carapace Shoulders','loot_slot'=>'Shoulder','loot_quality' => 'Artifact');
+		$loots[] = ARRAY(
+			'loot_url' => 'http://wildstar.datminer.com/item/40095/Project_Legacy:_The_Dreamer',
+			'loot_name'=>'Project Legacy: The Dreamer',
+			'loot_slot'=>'WeaponPrimary',
+			'loot_quality' => 'Artifact');
+		$loots[] = ARRAY(
+			'loot_url' => 'http://wildstar.datminer.com/item/40094/Project_Legacy:_The_Contrarian',
+			'loot_name'=>'Project Legacy: The Contrarian',
+			'loot_slot'=>'WeaponPrimary',
+			'loot_quality' => 'Artifact');
+		$loots[] = ARRAY(
+			'loot_url' => 'http://wildstar.datminer.com/item/40093/Project_Legacy:_The_Shadowsoul',
+			'loot_name'=>'Project Legacy: The Shadowsoul',
+			'loot_slot'=>'WeaponPrimary',
+			'loot_quality' => 'Artifact');
+		$loots[] = ARRAY(
+			'loot_url' => 'http://wildstar.datminer.com/item/40092/Project_Legacy:_The_Chirurgeon',
+			'loot_name'=>'Project Legacy: The Chirurgeon',
+			'loot_slot'=>'WeaponPrimary',
+			'loot_quality' => 'Artifact');
+		$loots[] = ARRAY(
+			'loot_url' => 'http://wildstar.datminer.com/item/40091/Project_Legacy:_The_Wright',
+			'loot_name'=>'Project Legacy: The Wright',
+			'loot_slot'=>'WeaponPrimary',
+			'loot_quality' => 'Artifact');
+		$loots[] = ARRAY(
+			'loot_url' => 'http://wildstar.datminer.com/item/40090/Project_Legacy:_The_Steadfast',
+			'loot_name'=>'Project Legacy: The Steadfast',
+			'loot_slot'=>'WeaponPrimary',
+			'loot_quality' => 'Artifact');
+		$loots[] = ARRAY(
+			'loot_url' => 'http://wildstar.datminer.com/item/39914/Null_Gravity_Blades',
+			'loot_name'=>'Null Gravity Blades',
+			'loot_slot'=>'WeaponPrimary',
+			'loot_quality' => 'Legendary');
+		$loots[] = ARRAY(
+			'loot_url' => 'http://wildstar.datminer.com/item/22528/Benefactor\'s_Afflicting_Raiment',
+			'loot_name'=>'Benefactor\'s Afflicting Raiment',
+			'loot_slot'=>'ArmorChest',
+			'loot_quality' => 'Superb');
+		$loots[] = ARRAY(
+			'loot_url' => 'http://wildstar.datminer.com/item/22528/Benefactor\'s_Afflicting_Raiment',
+			'loot_name'=>'Benefactor\'s Afflicting Raiment',
+			'loot_slot'=>'ArmorChest',
+			'loot_quality' => 'Superb');
+		$loots[] = ARRAY(
+			'loot_url' => 'http://wildstar.datminer.com/item/38144/Bonebreakers',
+			'loot_name'=>'Bonebreakers',
+			'loot_slot'=>'ArmorFeet',
+			'loot_quality' => 'Superb');
+		$loots[] = ARRAY(
+			'loot_url' => 'http://wildstar.datminer.com/item/42752/Vinewrapped_Treads',
+			'loot_name'=>'Vinewrapped Treads',
+			'loot_slot'=>'ArmorFeet',
+			'loot_quality' => 'Superb');
+		$loots[] = ARRAY(
+			'loot_url' => 'http://wildstar.datminer.com/item/39681/Hallucinatory_Secretions',
+			'loot_name'=>'Hallucinatory Secretions',
+			'loot_slot'=>'ArmorImplant',
+			'loot_quality' => 'Superb');
 		$lootid = rand(0,9);
 		$item_value = $this->calculateValue($loots[$lootid]['loot_quality'],$loots[$lootid]['loot_slot']);
 		DB::table('character_history')->insert(
@@ -361,19 +411,25 @@ class OneRaidSeeder extends Seeder {
 			case "Superb":
 				$qualityMultiplier = 2; 
 				break;
+			case "Legendary ★":
+				$qualityMultiplier = 3; 
+				break;
 			case "Legendary":
 				$qualityMultiplier = 3; 
 				break;
 			case "Artifact":
 				$qualityMultiplier = 5; 
 				break;
+			default:
+				$qualityMultiplier = 0;
+				break;
 		}
 
 		switch($type){
-			case "Weapon":
+			case "WeaponPrimary":
 				$typeMultiplier = 1.5; 
 				break;
-			case "Shields":
+			case "ArmorShields":
 				$typeMultiplier = 1.25; 
 				break;
 			default:
@@ -383,6 +439,7 @@ class OneRaidSeeder extends Seeder {
 
 		return $basePower * $qualityMultiplier * $typeMultiplier; 
 	}
+
 
 	public function decay(){
 		$characters = DB::table('characters')->get();
