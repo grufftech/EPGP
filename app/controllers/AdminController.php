@@ -137,6 +137,12 @@ class AdminController extends BaseController {
 			case "1hr":
 				$value = 100;
 				$reason = "1 Hour of Raiding";
+			case "2hr":
+				$value = 200;
+				$reason = "2 Hours of Raiding";
+			case "3hr":
+				$value = 300;
+				$reason = "3 Hours of Raiding";
 				break;
 			case "4hr":
 				$value = 400;
