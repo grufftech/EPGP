@@ -52,6 +52,8 @@
 					<select name="new_effort" class="form-control" id="select-1">
 						<option value="start">Early to Raid Bonus</option>
 						<option value="1hr">1 Hour Raiding</option>
+						<option value="2hr">2 Hours Raiding</option>
+						<option value="3hr">3 Hours Raiding</option>
 						<option value="4hr">4 Hours Raiding</option>
 						<option value="boss">Boss Kill</option>
 						<option value="bigboss">Progression Boss Kill (Boss Kill * 2)</option>
