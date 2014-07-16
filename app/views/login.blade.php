@@ -44,7 +44,7 @@
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 hidden-xs hidden-sm">
 			<h1 class="txt-color-red login-header-big">Create New User</h1>
 			<div class="well no-padding">
-				{{Form::open(array('action' => 'AdminController@create','class'=>'smart-form client-form'))}}
+				{{Form::open(array('action' => 'AdminController@createUser','class'=>'smart-form client-form'))}}
 					<header>
 						Create New User
 					</header>
