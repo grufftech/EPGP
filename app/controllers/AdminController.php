@@ -169,6 +169,10 @@ class AdminController extends BaseController {
 				$value = 400;
 				$reason = "Progression Boss Kill (doubled)";
 				break;
+			case "attunement":
+				$value = 200;
+				$reason = "Guild Attunement Attendence Bonus";
+				break;
 		}	
 
 		$characters = DB::table('characters')->select(DB::raw('*,ep/gp as pr'))->orderBy('pr','desc')->get();

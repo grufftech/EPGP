@@ -59,6 +59,7 @@
 						<option value="bigboss">Progression Boss Kill (Boss Kill * 2)</option>
 						<option value="rapeboss">Double Progression Boss Kill (Final Pull Boss Kill * 2)</option>
 						<option value="end">Raid End Bonus</option>
+						<option value="attunement">Guild Attunement Attendence Bonus</option>
 					</select> 
 
 				</div>
