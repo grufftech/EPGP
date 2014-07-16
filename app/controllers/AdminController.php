@@ -35,8 +35,7 @@ class AdminController extends BaseController {
 	}
 
 	public function createUser(){
-		dd(Input::get());turn Redirect::intended('login');
-		}
+		dd(Input::get());
 	}
 	public function logout(){
 		Auth::logout();
