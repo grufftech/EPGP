@@ -18,6 +18,7 @@ Route::post('/new-character', 'HomeController@newCharacterPost');
 
 /* Admin Login */
 Route::get('/login', 'AdminController@login');
+Route::get('/create', 'AdminController@create');
 Route::get('/logout', 'AdminController@logout');
 Route::post('/loginPost', 'AdminController@loginPost');
 
