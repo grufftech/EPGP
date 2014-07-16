@@ -35,6 +35,7 @@
 			</div>						
 		</div>
 	</div>
+</div>
 
 
 <div id="content" class="container">
@@ -71,5 +72,6 @@
 			</div>						
 		</div>
 	</div>
+</div>
 @include('partials.footer')
 		
