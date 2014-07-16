@@ -28,6 +28,7 @@
 						</section>
 					</fieldset>
 					<footer>
+						{{ Form::submit('Create Account',array('class'=>'btn btn-primary'));}}
 						{{ Form::submit('Sign in',array('class'=>'btn btn-primary'));}}
 					</footer>
 				{{ Form::close() }}

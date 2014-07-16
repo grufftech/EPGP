@@ -25,6 +25,7 @@ class AdminController extends BaseController {
 		return View::make('login');
 	}
 	public function loginPost()	{
+		dd(Input::get());
 		if (Auth::attempt(array('name' => Input::get('username'), 'password' => Input::get('password'))))
 		{
 			return Redirect::intended('admin');
