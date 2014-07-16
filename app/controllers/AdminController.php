@@ -35,9 +35,9 @@ class AdminController extends BaseController {
 	}
 
 	public function createUser(){
-		dd(Input::get());
+		echo $password = Hash::make(Input::get('password'));
 	}
-	
+
 	public function logout(){
 		Auth::logout();
 		return Redirect::intended('/');
