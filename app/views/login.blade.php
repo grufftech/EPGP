@@ -14,7 +14,7 @@
 
 					<fieldset>
 						<section>
-							<label class="label">E-mail</label>
+							<label class="label">Username</label>
 							<label class="input"> <i class="icon-append fa fa-user"></i>
 								{{ Form::text('username','',array());}}
 								<b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i> Please enter email address/username</b></label>
