@@ -20,13 +20,6 @@
 
 	<!-- widget div-->
 	<div>
-		<div class="alert adjusted alert-info fade in">
-			<button class="close" data-dismiss="alert">
-				×
-			</button>
-			<i class="fa-fw fa-lg fa fa-exclamation"></i>
-			all shown information is sample data for testing purposes.
-		</div>
         <p>
                 EPGP is a relational reward system for WildStar. It is an alternative DKP system in which your loot buying power is defined by the ratio of your effort and rewards points instead of their difference.
         </p>
