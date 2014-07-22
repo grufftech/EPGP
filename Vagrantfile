@@ -58,14 +58,12 @@ echo I am installing composer & downloading dependencies...
 curl -sS https://getcomposer.org/installer | php
 sudo mv composer.phar /usr/local/bin/composer
 cd /vagrant
-composer install --prefer-source --no-interaction
 mkdir -p /vagrant/app/storage/meta
 mkdir -p /vagrant/app/storage/cache
 mkdir -p /vagrant/app/storage/sessions
 mkdir -p /vagrant/app/storage/views
 mkdir -p /vagrant/app/storage/logs
 chmod -Rf 777 /vagrant/app/storage/
-php /vagrant/artisan migrate --seed
 
 
 echo \n\n\n\n\n

@@ -299,7 +299,7 @@ class AdminController extends BaseController {
 			array(
 				'character_id' => $char->id,
 				'change' => 'ep',
-				'value' => $char->ep*0.1,
+				'value' => $char->ep*0.1*-1,
 				'reason' => "10% EP Decay",
 			)
 		);
@@ -307,7 +307,7 @@ class AdminController extends BaseController {
 			array(
 				'character_id' => $char->id,
 				'change' => 'gp',
-				'value' => $char->gp*0.1,
+				'value' => $char->gp*0.1*-1,
 				'reason' => "10% GP Decay",
 			)
 		);
@@ -317,6 +317,82 @@ class AdminController extends BaseController {
 		
 	}
 
+
+	public function recalculateAll(){
+		$characters = DB::table('characters')->get();
+		foreach ($characters as $char){
+			$this->recalculate($char->id);
+		}
+		return Redirect::intended('admin');
+		
+	}
+
+	public function recalculate($id){
+		$character = DB::table('characters')->where('id',$id)->get();
+		$history = DB::table('character_history')->where('character_id',$id)->orderby('id',"asc")->get();
+		// Base Characters start with 1/100 EP/GP.
+		$characterEP = 1;
+		$characterGP = 100;
+		foreach ($history as $event){
+			if ($event->change == "ep"){
+				if (strpos($event->reason,"Decay")){
+					$decayAmount = round($characterEP * 0.1 * -1); 
+					DB::table('character_history')->where('id', $event->id)->update(array('reason' => "10% EP Decay - Previous EP: ".$characterEP,'value' => $decayAmount));
+					$characterEP = $characterEP + $decayAmount;
+				}else{
+					$characterEP = $characterEP + $event->value;
+				}
+
+			}
+			if ($event->change == "gp"){
+				if (strpos($event->reason,"Decay")){
+					$decayAmount = round($characterGP * 0.1 * -1); 
+					DB::table('character_history')->where('id', $event->id)->update(array('reason' => "10% GP Decay - Previous GP: ".$characterGP,'value' => $decayAmount));
+					$characterGP = $characterGP + $decayAmount;
+				}else{
+					$characterGP = $characterGP + $event->value;
+				}
+
+			}
+		}
+
+		DB::table('characters')->where('id', $id)->update(array('ep' => $characterEP,'gp' => $characterGP));
+		echo "Character Updated.";
+		
+	}
+
+
+
+	public function editHistory($historyID){
+		if (!Auth::check()){return Redirect::intended('login');}
+		$history = DB::table('character_history')->where('id',$historyID)->first();
+		$character = DB::table('characters')->where('id',$history->character_id)->first();
+		return View::make('editHistory',compact('history','character'));
+	}
+	public function editHistoryPost($historyID){
+		if (!Auth::check()){return Redirect::intended('login');}
+		DB::table('character_history')
+            ->where('id', $historyID)
+            ->update(array(
+            	'created_at'=>Input::get('created_at'),
+            	'change'=>Input::get('change'),
+            	'value'=>Input::get('value'),
+            	'reason'=>Input::get('reason'),
+            	'loot_url'=>Input::get('loot_url'),
+            	'loot_name'=>Input::get('loot_name'),
+            	'loot_slot'=>Input::get('loot_slot'),
+            	)
+            );
+
+		return Redirect::intended('admin');
+	}
+
+
+	public function deleteHistory($historyID){
+		if (!Auth::check()){return Redirect::intended('login');}
+		DB::table('character_history')->where('id', $historyID)->delete();
+		return Redirect::intended('admin');
+	}
 
 
 }

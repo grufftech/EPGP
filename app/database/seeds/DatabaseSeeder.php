@@ -21,74 +21,75 @@ class CharacterTableSeeder extends Seeder {
     public function run()
     {
         DB::table('characters')->insert(array(
-			array('name' => 'Jolan', 'class' => 'Stalker','role'=>'tank','ep' => 1,'gp' => 1),
-			array('name' => 'Daeke', 'class' => 'Warrior','role'=>'tank','ep' => 1,'gp' => 1),
-			array('name' => 'Gruff', 'class' => 'Engineer','role'=>'tank','ep' => 1,'gp' => 1),
-			array('name' => 'Gilby', 'class' => 'Esper','role'=>'heal','ep' => 1,'gp' => 1),
-			array('name' => 'Kyior', 'class' => 'Spellslinger','role'=>'heal','ep' => 1,'gp' => 1),
-			array('name' => 'Plumpo', 'class' => 'Medic','role'=>'heal','ep' => 1,'gp' => 1),
-			array('name' => 'DruZod', 'class' => 'Stalker','role'=>'tank','ep' => 1,'gp' => 1),
-			array('name' => 'Talvon', 'class' => 'Warrior','role'=>'tank','ep' => 1,'gp' => 1),
-			array('name' => 'Xinit', 'class' => 'Engineer','role'=>'tank','ep' => 1,'gp' => 1),
-			array('name' => 'Random', 'class' => 'Esper','role'=>'tank','ep' => 1,'gp' => 1),
-			array('name' => 'Folkmore', 'class' => 'Spellslinger','role'=>'heal','ep' => 1,'gp' => 1),
-			array('name' => 'Lisassa', 'class' => 'Esper','role'=>'heal','ep' => 1,'gp' => 1),
-			array('name' => 'Churchill', 'class' => 'Spellslinger','role'=>'heal','ep' => 1,'gp' => 1)
+			array('name' => 'Jolan', 'class' => 'Stalker','role'=>'tank','ep' => 1,'gp' => 100),
+			array('name' => 'Daeke', 'class' => 'Warrior','role'=>'tank','ep' => 1,'gp' => 100),
+			array('name' => 'Gruff', 'class' => 'Engineer','role'=>'tank','ep' => 1,'gp' => 100),
+			array('name' => 'Gilby', 'class' => 'Esper','role'=>'heal','ep' => 1,'gp' => 100),
+			array('name' => 'Kyior', 'class' => 'Spellslinger','role'=>'heal','ep' => 1,'gp' => 100),
+			array('name' => 'Plumpo', 'class' => 'Medic','role'=>'heal','ep' => 1,'gp' => 100),
+			array('name' => 'DruZod', 'class' => 'Stalker','role'=>'tank','ep' => 1,'gp' => 100),
+			array('name' => 'Talvon', 'class' => 'Warrior','role'=>'tank','ep' => 1,'gp' => 100),
+			array('name' => 'Xinit', 'class' => 'Engineer','role'=>'tank','ep' => 1,'gp' => 100),
+			array('name' => 'Random', 'class' => 'Esper','role'=>'tank','ep' => 1,'gp' => 100),
+			array('name' => 'Folkmore', 'class' => 'Spellslinger','role'=>'heal','ep' => 1,'gp' => 100),
+			array('name' => 'Lisassa', 'class' => 'Esper','role'=>'heal','ep' => 1,'gp' => 100),
+			array('name' => 'Churchill', 'class' => 'Spellslinger','role'=>'heal','ep' => 1,'gp' => 100)
 		));
+			
         DB::table('characters')->insert(array(
-			array('name' => 'Lirtadar', 'class' => 'Medic','ep' => 1,'gp' => 1),
-			array('name' => 'Marirrast', 'class' => 'Stalker','ep' => 1,'gp' => 1),
-			array('name' => 'Frichistan', 'class' => 'Warrior','ep' => 1,'gp' => 1),
-			array('name' => 'Iskilsaya', 'class' => 'Engineer','ep' => 1,'gp' => 1),
-			array('name' => 'Kachek', 'class' => 'Warrior','ep' => 1,'gp' => 1),
-			array('name' => 'Azilek', 'class' => 'Engineer','ep' => 1,'gp' => 1),
-			array('name' => 'Kabim', 'class' => 'Esper','ep' => 1,'gp' => 1),
-			array('name' => 'Jolajich', 'class' => 'Spellslinger','ep' => 1,'gp' => 1),
-			array('name' => 'Lanaqa', 'class' => 'Medic','ep' => 1,'gp' => 1),
-			array('name' => 'Tztomelja', 'class' => 'Stalker','ep' => 1,'gp' => 1),
-			array('name' => 'Etzlawek', 'class' => 'Warrior','ep' => 1,'gp' => 1),
-			array('name' => 'Izlajal', 'class' => 'Engineer','ep' => 1,'gp' => 1),
-			array('name' => 'Ixam', 'class' => 'Esper','ep' => 1,'gp' => 1),
-			array('name' => 'Tsal', 'class' => 'Spellslinger','ep' => 1,'gp' => 1),
-			array('name' => 'Kabimek', 'class' => 'Esper','ep' => 1,'gp' => 1),
-			array('name' => 'Lanil', 'class' => 'Spellslinger','ep' => 1,'gp' => 1),
-			array('name' => 'Azende', 'class' => 'Medic','ep' => 1,'gp' => 1),
-			array('name' => 'Jolypam', 'class' => 'Stalker','ep' => 1,'gp' => 1),
-			array('name' => 'Kachende', 'class' => 'Warrior','ep' => 1,'gp' => 1),
-			array('name' => 'Izlayam', 'class' => 'Engineer','ep' => 1,'gp' => 1),
-			array('name' => 'Isaias', 'class' => 'Stalker','ep' => 1,'gp' => 1),
-			array('name' => 'Celia', 'class' => 'Warrior','ep' => 1,'gp' => 1),
-			array('name' => 'Tamica', 'class' => 'Engineer','ep' => 1,'gp' => 1),
-			array('name' => 'Isidra', 'class' => 'Esper','ep' => 1,'gp' => 1),
-			array('name' => 'Suzanna', 'class' => 'Spellslinger','ep' => 1,'gp' => 1),
-			array('name' => 'Katy', 'class' => 'Medic','ep' => 1,'gp' => 1),
-			array('name' => 'Bruce', 'class' => 'Stalker','ep' => 1,'gp' => 1),
-			array('name' => 'Bryan', 'class' => 'Warrior','ep' => 1,'gp' => 1),
-			array('name' => 'Bernardo', 'class' => 'Engineer','ep' => 1,'gp' => 1),
-			array('name' => 'Corey', 'class' => 'Esper','ep' => 1,'gp' => 1),
-			array('name' => 'Zack', 'class' => 'Spellslinger','ep' => 1,'gp' => 1),
-			array('name' => 'Noe', 'class' => 'Esper','ep' => 1,'gp' => 1),
-			array('name' => 'Wade', 'class' => 'Spellslinger','ep' => 1,'gp' => 1),
-			array('name' => 'Armando', 'class' => 'Medic','ep' => 1,'gp' => 1),
-			array('name' => 'Donovan', 'class' => 'Stalker','ep' => 1,'gp' => 1),
-			array('name' => 'Williams', 'class' => 'Warrior','ep' => 1,'gp' => 1),
-			array('name' => 'Rolando', 'class' => 'Engineer','ep' => 1,'gp' => 1),
-			array('name' => 'Jay', 'class' => 'Warrior','ep' => 1,'gp' => 1),
-			array('name' => 'Octavio', 'class' => 'Engineer','ep' => 1,'gp' => 1),
-			array('name' => 'Xoolia', 'class' => 'Esper','ep' => 1,'gp' => 1),
-			array('name' => 'Olivander', 'class' => 'Spellslinger','ep' => 1,'gp' => 1),
-			array('name' => 'Boondock', 'class' => 'Medic','ep' => 1,'gp' => 1),
-			array('name' => 'Shaldirn', 'class' => 'Stalker','ep' => 1,'gp' => 1),
-			array('name' => 'Runlevel6', 'class' => 'Warrior','ep' => 1,'gp' => 1),
-			array('name' => 'Grufftech', 'class' => 'Engineer','ep' => 1,'gp' => 1),
-			array('name' => 'Malgus', 'class' => 'Esper','ep' => 1,'gp' => 1),
-			array('name' => 'Vossryn', 'class' => 'Spellslinger','ep' => 1,'gp' => 1),
-			array('name' => 'Boner', 'class' => 'Esper','ep' => 1,'gp' => 1),
-			array('name' => 'Soup', 'class' => 'Spellslinger','ep' => 1,'gp' => 1),
-			array('name' => 'Cheez', 'class' => 'Medic','ep' => 1,'gp' => 1),
-			array('name' => 'Jolly', 'class' => 'Stalker','ep' => 1,'gp' => 1),
-			array('name' => 'Easter', 'class' => 'Warrior','ep' => 1,'gp' => 1),
-			array('name' => 'Taunts', 'class' => 'Engineer','ep' => 1,'gp' => 1),
+			array('name' => 'Lirtadar', 'class' => 'Medic','ep' => 1,'gp' => 100),
+			array('name' => 'Marirrast', 'class' => 'Stalker','ep' => 1,'gp' => 100),
+			array('name' => 'Frichistan', 'class' => 'Warrior','ep' => 1,'gp' => 100),
+			array('name' => 'Iskilsaya', 'class' => 'Engineer','ep' => 1,'gp' => 100),
+			array('name' => 'Kachek', 'class' => 'Warrior','ep' => 1,'gp' => 100),
+			array('name' => 'Azilek', 'class' => 'Engineer','ep' => 1,'gp' => 100),
+			array('name' => 'Kabim', 'class' => 'Esper','ep' => 1,'gp' => 100),
+			array('name' => 'Jolajich', 'class' => 'Spellslinger','ep' => 1,'gp' => 100),
+			array('name' => 'Lanaqa', 'class' => 'Medic','ep' => 1,'gp' => 100),
+			array('name' => 'Tztomelja', 'class' => 'Stalker','ep' => 1,'gp' => 100),
+			array('name' => 'Etzlawek', 'class' => 'Warrior','ep' => 1,'gp' => 100),
+			array('name' => 'Izlajal', 'class' => 'Engineer','ep' => 1,'gp' => 100),
+			array('name' => 'Ixam', 'class' => 'Esper','ep' => 1,'gp' => 100),
+			array('name' => 'Tsal', 'class' => 'Spellslinger','ep' => 1,'gp' => 100),
+			array('name' => 'Kabimek', 'class' => 'Esper','ep' => 1,'gp' => 100),
+			array('name' => 'Lanil', 'class' => 'Spellslinger','ep' => 1,'gp' => 100),
+			array('name' => 'Azende', 'class' => 'Medic','ep' => 1,'gp' => 100),
+			array('name' => 'Jolypam', 'class' => 'Stalker','ep' => 1,'gp' => 100),
+			array('name' => 'Kachende', 'class' => 'Warrior','ep' => 1,'gp' => 100),
+			array('name' => 'Izlayam', 'class' => 'Engineer','ep' => 1,'gp' => 100),
+			array('name' => 'Isaias', 'class' => 'Stalker','ep' => 1,'gp' => 100),
+			array('name' => 'Celia', 'class' => 'Warrior','ep' => 1,'gp' => 100),
+			array('name' => 'Tamica', 'class' => 'Engineer','ep' => 1,'gp' => 100),
+			array('name' => 'Isidra', 'class' => 'Esper','ep' => 1,'gp' => 100),
+			array('name' => 'Suzanna', 'class' => 'Spellslinger','ep' => 1,'gp' => 100),
+			array('name' => 'Katy', 'class' => 'Medic','ep' => 1,'gp' => 100),
+			array('name' => 'Bruce', 'class' => 'Stalker','ep' => 1,'gp' => 100),
+			array('name' => 'Bryan', 'class' => 'Warrior','ep' => 1,'gp' => 100),
+			array('name' => 'Bernardo', 'class' => 'Engineer','ep' => 1,'gp' => 100),
+			array('name' => 'Corey', 'class' => 'Esper','ep' => 1,'gp' => 100),
+			array('name' => 'Zack', 'class' => 'Spellslinger','ep' => 1,'gp' => 100),
+			array('name' => 'Noe', 'class' => 'Esper','ep' => 1,'gp' => 100),
+			array('name' => 'Wade', 'class' => 'Spellslinger','ep' => 1,'gp' => 100),
+			array('name' => 'Armando', 'class' => 'Medic','ep' => 1,'gp' => 100),
+			array('name' => 'Donovan', 'class' => 'Stalker','ep' => 1,'gp' => 100),
+			array('name' => 'Williams', 'class' => 'Warrior','ep' => 1,'gp' => 100),
+			array('name' => 'Rolando', 'class' => 'Engineer','ep' => 1,'gp' => 100),
+			array('name' => 'Jay', 'class' => 'Warrior','ep' => 1,'gp' => 100),
+			array('name' => 'Octavio', 'class' => 'Engineer','ep' => 1,'gp' => 100),
+			array('name' => 'Xoolia', 'class' => 'Esper','ep' => 1,'gp' => 100),
+			array('name' => 'Olivander', 'class' => 'Spellslinger','ep' => 1,'gp' => 100),
+			array('name' => 'Boondock', 'class' => 'Medic','ep' => 1,'gp' => 100),
+			array('name' => 'Shaldirn', 'class' => 'Stalker','ep' => 1,'gp' => 100),
+			array('name' => 'Runlevel6', 'class' => 'Warrior','ep' => 1,'gp' => 100),
+			array('name' => 'Grufftech', 'class' => 'Engineer','ep' => 1,'gp' => 100),
+			array('name' => 'Malgus', 'class' => 'Esper','ep' => 1,'gp' => 100),
+			array('name' => 'Vossryn', 'class' => 'Spellslinger','ep' => 1,'gp' => 100),
+			array('name' => 'Boner', 'class' => 'Esper','ep' => 1,'gp' => 100),
+			array('name' => 'Soup', 'class' => 'Spellslinger','ep' => 1,'gp' => 100),
+			array('name' => 'Cheez', 'class' => 'Medic','ep' => 1,'gp' => 100),
+			array('name' => 'Jolly', 'class' => 'Stalker','ep' => 1,'gp' => 100),
+			array('name' => 'Easter', 'class' => 'Warrior','ep' => 1,'gp' => 100),
+			array('name' => 'Taunts', 'class' => 'Engineer','ep' => 1,'gp' => 100),
 		));
     }
 }
@@ -445,23 +446,28 @@ class OneRaidSeeder extends Seeder {
 		$characters = DB::table('characters')->get();
 
 		foreach ($characters as $char){
-		DB::table('characters')->where('id', $char->id)->update(array('ep' => $char->ep*0.9,'gp' => $char->gp*0.9));
-		DB::table('character_history')->insert(
-			array(
-				'character_id' => $char->id,
-				'change' => 'ep',
-				'value' => $char->ep*0.1,
-				'reason' => "10% EP Decay",
-			)
-		);
-		DB::table('character_history')->insert(
-			array(
-				'character_id' => $char->id,
-				'change' => 'gp',
-				'value' => $char->gp*0.1,
-				'reason' => "10% GP Decay",
-			)
-		);
+			$decayEPAmount = $char->ep*0.1*-1;
+			$decayGPAmount = $char->gp*0.1*-1;
+			DB::table('character_history')->insert(
+				array(
+					'character_id' => $char->id,
+					'change' => 'ep',
+					'value' => $decayEPAmount,
+					'reason' => "10% EP Decay - Previous Value: ".$char->ep,
+				)
+			);
+			DB::table('character_history')->insert(
+				array(
+					'character_id' => $char->id,
+					'change' => 'gp',
+					'value' => $decayGPAmount,
+					'reason' => "10% GP Decay - Previous Value: ".$char->gp,
+				)
+			);
+
+			$newEP = $char->ep + $decayEPAmount;
+			$newGP = $char->gp + $decayGPAmount;
+			DB::table('characters')->where('id', $char->id)->update(array('ep' => $newEP,'gp' => $newGP));
 		}
 
 		return Redirect::intended('admin');

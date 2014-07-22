@@ -40,8 +40,9 @@
                                         <th>Gear Points</th>
                                         <th>Loot Priority</th>
                                         <?if (Auth::check()){?>
-                                        <th>Admin Edit</th>
-                                        <th>Admin Delete</th>
+                                        <th>Recalculate</th>
+                                        <th>Edit</th>
+                                        <th>Delete</th>
                                         <? } ?>
                                 </tr>
                         </thead>
@@ -59,8 +60,9 @@
                                         <td>{{$char->gp}}</td>
                                         <td>{{$char->pr}}</td>
                                         <?if (Auth::check()){?>
-                                        <td><a href={{action('AdminController@editCharacter', $char->id)}}><i class="fa  fa-gear"></i> Edit</a></td>
-                                        <td><a href={{action('AdminController@deleteCharacter', $char->id)}}><i class="fa  fa-times-circle"></i> Delete</a></td>
+                                        <td><a href={{action('AdminController@recalculate', $char->id)}}>Recalculate</a></td>
+                                        <td><a href={{action('AdminController@editCharacter', $char->id)}}>Edit</a></td>
+                                        <td><a href={{action('AdminController@deleteCharacter', $char->id)}}>Delete</a></td>
                                         <? } ?>
                                 </tr>
                         <?php } ?>

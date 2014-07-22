@@ -35,6 +35,10 @@
 						<th>Item Type</th>
 						<th>Item</th>
 						<th>Date</th>
+                        <?if (Auth::check()){?>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                        <? } ?>
 					</tr>
 				</thead>
 				<tbody>
@@ -47,6 +51,10 @@
 						<td>{{$h->loot_slot}}</td>
 						<td><a target=_blank href={{$h->loot_url}}>{{$h->loot_name}}</a></td>
 						<td>{{$h->created_at}}</td>
+                        <?if (Auth::check()){?>
+                        <th><a href={{action('AdminController@editHistory', $h->id)}}>Edit</a></th>
+                        <th><a href={{action('AdminController@deleteHistory', $h->id)}}>Delete</a></th>
+                        <? } ?>
 					</tr>
 					<?php } ?>
 				</tbody>

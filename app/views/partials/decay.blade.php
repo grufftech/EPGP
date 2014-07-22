@@ -15,7 +15,7 @@
 -->
 <header>
 	<span class="widget-icon"> <i class="fa fa-user"></i> </span>
-	<h2><strong>Decay</strong><i>EPGP</i></h2>
+	<h2><strong>Admin</strong><i>EPGP</i></h2>
 </header>
 <!-- widget div-->
 <div role="content">
@@ -26,7 +26,17 @@
 		{{Form::open(array('action' => 'AdminController@decay','class'=>'smart-form'))}}
 
 		<footer>
-			{{ Form::submit('Decay',array('class'=>'btn btn-danger'));}}
+			{{ Form::submit('Decay All',array('class'=>'btn btn-danger'));}}
+		</footer>
+
+		
+		{{ Form::close() }}
+
+
+		{{Form::open(array('action' => 'AdminController@recalculateAll','class'=>'smart-form'))}}
+
+		<footer>
+			{{ Form::submit('Recalculate All',array('class'=>'btn btn-danger'));}}
 		</footer>
 
 		
