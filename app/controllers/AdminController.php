@@ -378,9 +378,9 @@ class AdminController extends BaseController {
             	'change'=>Input::get('change'),
             	'value'=>Input::get('value'),
             	'reason'=>Input::get('reason'),
-            	'loot_url'=>Input::get('loot_url'),
-            	'loot_name'=>Input::get('loot_name'),
-            	'loot_slot'=>Input::get('loot_slot'),
+            	'loot_url'=>(Input::get('loot_url') == "" ? NULL : Input::get('loot_url')),
+            	'loot_name'=>(Input::get('loot_name') == "" ? NULL : Input::get('loot_name')),
+            	'loot_slot'=>(Input::get('loot_slot') == "" ? NULL : Input::get('loot_slot')),
             	)
             );
 
