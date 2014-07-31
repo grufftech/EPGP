@@ -82,7 +82,7 @@ class AdminController extends BaseController {
 		$itemName = $this->getName($page);
 		$itemType = $this->getType($page);
 		$itemQuality = $this->getQuality($page);
-		$itemCost = $this->calculateValue($itemQuality,$itemType);
+		$itemCost = $this->getValue($page);
 		DB::table('character_history')->insert(
 			array(
 				'character_id' => $character->id,
@@ -127,6 +127,14 @@ class AdminController extends BaseController {
 		return Redirect::intended('admin');
 	}
 
+	public function massSelectAll(){
+		DB::table('characters')->update(array('active' => 1));
+		return Redirect::intended('admin');
+	}
+	public function massClearAll(){
+		DB::table('characters')->update(array('active' => 0));
+		return Redirect::intended('admin');
+	}
 
 	public function massEffort(){
 		if (!Auth::check()){return Redirect::intended('login');}
@@ -204,7 +212,7 @@ class AdminController extends BaseController {
 		$itemName = $this->getName($page);
 		$itemType = $this->getType($page);
 		$itemQuality = $this->getQuality($page);
-		$itemCost = $this->calculateValue($itemQuality,$itemType);
+		$itemCost = $this->getValue($page);
 		echo "Name: ".$itemName."<br>";
 		echo "Type: ".$itemType."<br>";
 		echo "Quality: ".$itemQuality."<br>";
@@ -239,55 +247,16 @@ class AdminController extends BaseController {
 		}
 	}
 
-
-	public function calculateValue($quality,$type){
+	public function getValue($code){
 		if (!Auth::check()){return Redirect::intended('login');}
-		$basePower = 50;
-
-		switch($quality){
-			case "Inferior":
-				$qualityMultiplier = 0; 
-				break;
-			case "Average":
-				$qualityMultiplier = 0; 
-				break;
-			case "Good":
-				$qualityMultiplier = 0; 
-				break;
-			case "Excellent":
-				$qualityMultiplier = 1; 
-				break;
-			case "Superb":
-				$qualityMultiplier = 2; 
-				break;
-			case "Legendary ★":
-				$qualityMultiplier = 3; 
-				break;
-			case "Legendary":
-				$qualityMultiplier = 3; 
-				break;
-			case "Artifact":
-				$qualityMultiplier = 5; 
-				break;
-			default:
-				$qualityMultiplier = 0;
-				break;
+		$matches = ARRAY();
+		preg_match('/<tr>[\s]*<td>[\s]*<span class="blue">[\s]*Power[\s]*<\/span>[\s]*<\/td>[\s]*<td class="grey" style="text-align: right;">[\s]*(.*?)[\s]*<\/td>[\s]*<\/tr>/',$code,$matches);
+		if ($matches){
+			return trim(ltrim($matches[1]));
 		}
-
-		switch($type){
-			case "WeaponPrimary":
-				$typeMultiplier = 1.5; 
-				break;
-			case "ArmorShields":
-				$typeMultiplier = 1.25; 
-				break;
-			default:
-				$typeMultiplier = 1; 
-				break;	
-		}	
-
-		return $basePower * $qualityMultiplier * $typeMultiplier; 
 	}
+
+
 
 
 	public function decay(){

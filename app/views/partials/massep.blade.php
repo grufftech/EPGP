@@ -69,13 +69,26 @@
 		<div class="widget-footer">
 			<footer>
 				<button type="submit" class="btn btn-warning">
-					Submit
+					Grant Effort
 				</button>
+
+			{{ Form::close() }}
+
+			{{Form::open(array('action' => 'AdminController@massSelectAll','class'=>'smart-form'))}}
+				<button type="submit" class="btn btn-warning">
+					Select All
+				</button>
+			{{ Form::close() }}
+			{{Form::open(array('action' => 'AdminController@massClearAll','class'=>'smart-form'))}}
+				<button type="submit" class="btn btn-warning">
+					Clear All
+				</button>
+			{{ Form::close() }}
+
 			</footer>
 		</div>
 
 
-		{{ Form::close() }}
 		
 	</div>
 	<!-- end widget content -->

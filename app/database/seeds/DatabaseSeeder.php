@@ -309,137 +309,56 @@ class OneRaidSeeder extends Seeder {
 			}
 		}
     }
+
     public function gifLoots(){
     	$char = DB::table('characters')->select(DB::raw('*,ep/gp as pr'))->orderBy('pr','desc')->first();
 
-		$loots = ARRAY();
-		$loots[] = ARRAY(
-			'loot_url' => 'http://wildstar.datminer.com/item/40095/Project_Legacy:_The_Dreamer',
-			'loot_name'=>'Project Legacy: The Dreamer',
-			'loot_slot'=>'WeaponPrimary',
-			'loot_quality' => 'Artifact');
-		$loots[] = ARRAY(
-			'loot_url' => 'http://wildstar.datminer.com/item/40094/Project_Legacy:_The_Contrarian',
-			'loot_name'=>'Project Legacy: The Contrarian',
-			'loot_slot'=>'WeaponPrimary',
-			'loot_quality' => 'Artifact');
-		$loots[] = ARRAY(
-			'loot_url' => 'http://wildstar.datminer.com/item/40093/Project_Legacy:_The_Shadowsoul',
-			'loot_name'=>'Project Legacy: The Shadowsoul',
-			'loot_slot'=>'WeaponPrimary',
-			'loot_quality' => 'Artifact');
-		$loots[] = ARRAY(
-			'loot_url' => 'http://wildstar.datminer.com/item/40092/Project_Legacy:_The_Chirurgeon',
-			'loot_name'=>'Project Legacy: The Chirurgeon',
-			'loot_slot'=>'WeaponPrimary',
-			'loot_quality' => 'Artifact');
-		$loots[] = ARRAY(
-			'loot_url' => 'http://wildstar.datminer.com/item/40091/Project_Legacy:_The_Wright',
-			'loot_name'=>'Project Legacy: The Wright',
-			'loot_slot'=>'WeaponPrimary',
-			'loot_quality' => 'Artifact');
-		$loots[] = ARRAY(
-			'loot_url' => 'http://wildstar.datminer.com/item/40090/Project_Legacy:_The_Steadfast',
-			'loot_name'=>'Project Legacy: The Steadfast',
-			'loot_slot'=>'WeaponPrimary',
-			'loot_quality' => 'Artifact');
-		$loots[] = ARRAY(
-			'loot_url' => 'http://wildstar.datminer.com/item/39914/Null_Gravity_Blades',
-			'loot_name'=>'Null Gravity Blades',
-			'loot_slot'=>'WeaponPrimary',
-			'loot_quality' => 'Legendary');
-		$loots[] = ARRAY(
-			'loot_url' => 'http://wildstar.datminer.com/item/22528/Benefactor\'s_Afflicting_Raiment',
-			'loot_name'=>'Benefactor\'s Afflicting Raiment',
-			'loot_slot'=>'ArmorChest',
-			'loot_quality' => 'Superb');
-		$loots[] = ARRAY(
-			'loot_url' => 'http://wildstar.datminer.com/item/22528/Benefactor\'s_Afflicting_Raiment',
-			'loot_name'=>'Benefactor\'s Afflicting Raiment',
-			'loot_slot'=>'ArmorChest',
-			'loot_quality' => 'Superb');
-		$loots[] = ARRAY(
-			'loot_url' => 'http://wildstar.datminer.com/item/38144/Bonebreakers',
-			'loot_name'=>'Bonebreakers',
-			'loot_slot'=>'ArmorFeet',
-			'loot_quality' => 'Superb');
-		$loots[] = ARRAY(
-			'loot_url' => 'http://wildstar.datminer.com/item/42752/Vinewrapped_Treads',
-			'loot_name'=>'Vinewrapped Treads',
-			'loot_slot'=>'ArmorFeet',
-			'loot_quality' => 'Superb');
-		$loots[] = ARRAY(
-			'loot_url' => 'http://wildstar.datminer.com/item/39681/Hallucinatory_Secretions',
-			'loot_name'=>'Hallucinatory Secretions',
-			'loot_slot'=>'ArmorImplant',
-			'loot_quality' => 'Superb');
-		$lootid = rand(0,9);
-		$item_value = $this->calculateValue($loots[$lootid]['loot_quality'],$loots[$lootid]['loot_slot']);
+		$loots = ARRAY(
+			'http://wildstar.datminer.com/ptr/item/40095/Project-Legacy:-The-Dreamer',
+			'http://wildstar.datminer.com/ptr/item/40094/Project-Legacy:-The-Contrarian',
+			'http://wildstar.datminer.com/ptr/item/40093/Project-Legacy:-The-Shadowsoul',
+			'http://wildstar.datminer.com/ptr/item/40092/Project-Legacy:-The-Chirurgeon',
+			'http://wildstar.datminer.com/ptr/item/40091/Project-Legacy:-The-Wright',
+			'http://wildstar.datminer.com/ptr/item/44527/Primary-Source-Chest-Guard',
+			'http://wildstar.datminer.com/ptr/item/39939/Neuroweave-Bodysuit',
+			'http://wildstar.datminer.com/ptr/item/39928/Neuromancer-Regalia',
+			'http://wildstar.datminer.com/ptr/item/39909/Coat-of-Refraction',
+			'http://wildstar.datminer.com/ptr/item/39827/Pedant-Treads',
+			'http://wildstar.datminer.com/ptr/item/39555/Phagewarped-Leg-Plates',
+			'http://wildstar.datminer.com/ptr/item/39441/Hyper-Regenerative-Scrubs',
+			'http://wildstar.datminer.com/ptr/item/40082/Intrusive-Espernetic-Neuroblade',
+			'http://wildstar.datminer.com/ptr/item/20297/Emancipator\'s-Fusillade-Assist-Module',
+			'http://wildstar.datminer.com/ptr/item/20310/Emancipator\'s-Invigorating-Assist-Module',
+			'http://wildstar.datminer.com/ptr/item/39255/Retributor\'s-Invasive-Analyzer',
+			'http://wildstar.datminer.com/ptr/item/39907/Laser-Hash-Shielding',
+			'http://wildstar.datminer.com/ptr/item/22865/Occultist\'s-Meditative-Energy-Shield',
+			'http://wildstar.datminer.com/ptr/item/22759/Precursor\'s-Afflicting-Energy-Shield',
+			'http://wildstar.datminer.com/ptr/item/39792/Wind-Funnel-Shield');
+
+		$lootid = rand(0,15);
+
+		$page = file_get_contents($loots[$lootid]);
+		//echo $page;
+		$itemName = $this->getName($page);
+		$itemType = $this->getType($page);
+		$itemQuality = $this->getQuality($page);
+		$itemCost = $this->getValue($page);
 		DB::table('character_history')->insert(
 			array(
 				'character_id' => $char->id,
 				'change' => 'gp',
-				'value' => $item_value,
+				'value' => $itemCost,
 				'reason' => "Loot",
-				'loot_url' => $loots[$lootid]['loot_url'],
-				'loot_name' => $loots[$lootid]['loot_name'],
-				'loot_slot' => $loots[$lootid]['loot_slot'],
+				'loot_url' => $loots[$lootid],
+				'loot_name' => $itemName,
+				'loot_slot' => $itemType,
 			)
 		);
 
 		DB::table('characters')
-            ->where('id', $char->id)
-            ->update(array('gp' => $char->gp + $item_value));
-
+            ->where('id',$char->id)
+            ->update(array('gp' => $char->gp + $itemCost));
     }
-
-	public function calculateValue($quality,$type){
-		$basePower = 50;
-
-		switch($quality){
-			case "Inferior":
-				$qualityMultiplier = 0; 
-				break;
-			case "Average":
-				$qualityMultiplier = 0; 
-				break;
-			case "Good":
-				$qualityMultiplier = 0; 
-				break;
-			case "Excellent":
-				$qualityMultiplier = 1; 
-				break;
-			case "Superb":
-				$qualityMultiplier = 2; 
-				break;
-			case "Legendary ★":
-				$qualityMultiplier = 3; 
-				break;
-			case "Legendary":
-				$qualityMultiplier = 3; 
-				break;
-			case "Artifact":
-				$qualityMultiplier = 5; 
-				break;
-			default:
-				$qualityMultiplier = 0;
-				break;
-		}
-
-		switch($type){
-			case "WeaponPrimary":
-				$typeMultiplier = 1.5; 
-				break;
-			case "ArmorShields":
-				$typeMultiplier = 1.25; 
-				break;
-			default:
-				$typeMultiplier = 1; 
-				break;	
-		}	
-
-		return $basePower * $qualityMultiplier * $typeMultiplier; 
-	}
 
 
 	public function decay(){
@@ -473,6 +392,40 @@ class OneRaidSeeder extends Seeder {
 		return Redirect::intended('admin');
 		
 	}
+
+
+	public function getName($code){
+		$matches = ARRAY();
+		preg_match('/<title>(.*) - Item - Wildstar<\/title>/',$code,$matches);
+		if ($matches){
+			return trim(ltrim($matches[1]));
+		}
+	}
+
+	public function getType($code){
+		$matches = ARRAY();
+		preg_match('/<tr>[\s]*<td>[\s]*<span class="blue">[\s]*Slot[\s]*<\/span>[\s]*<\/td>[\s]*<td class="grey" style="text-align: right;">[\s]*(.*?)[\s]*<\/td>[\s]*<\/tr>/',$code,$matches);
+		if ($matches){
+			return trim(ltrim($matches[1]));
+		}
+	}
+
+	public function getQuality($code){
+		$matches = ARRAY();
+		preg_match('/<span class="bind_flags" style="color:#.{0,6}?">[\s]*(.*?)[\s]*<\/span>/',$code,$matches);
+		if ($matches){
+			return trim(ltrim($matches[1]));
+		}
+	}
+
+	public function getValue($code){
+		$matches = ARRAY();
+		preg_match('/<tr>[\s]*<td>[\s]*<span class="blue">[\s]*Power[\s]*<\/span>[\s]*<\/td>[\s]*<td class="grey" style="text-align: right;">[\s]*(.*?)[\s]*<\/td>[\s]*<\/tr>/',$code,$matches);
+		if ($matches){
+			return trim(ltrim($matches[1]));
+		}
+	}
+
 }
 
 

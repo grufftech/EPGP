@@ -28,6 +28,8 @@ Route::get('/admin/giveLoot/{id}','AdminController@giveLoot');
 Route::post('/admin/giveLoot/{id}','AdminController@giveLootPost');
 Route::get('/admin/modifyEffort/{id}','AdminController@modifyEffort');
 Route::post('/admin/modifyEffort/{id}','AdminController@modifyEffortPost');
+Route::post('/admin/massClear', 'AdminController@massClearAll');
+Route::post('/admin/massSelect', 'AdminController@massSelectAll');
 Route::post('/admin/massEffort', 'AdminController@massEffort');
 Route::get('/admin/recalculate/{id}', 'AdminController@recalculate');
 Route::post('/admin/recalculateALL', 'AdminController@recalculateAll');
