@@ -263,21 +263,21 @@ class AdminController extends BaseController {
 		$characters = DB::table('characters')->get();
 
 		foreach ($characters as $char){
-		DB::table('characters')->where('id', $char->id)->update(array('ep' => $char->ep*0.9,'gp' => $char->gp*0.9));
+		DB::table('characters')->where('id', $char->id)->update(array('ep' => $char->ep*0.8,'gp' => $char->gp*0.8));
 		DB::table('character_history')->insert(
 			array(
 				'character_id' => $char->id,
 				'change' => 'ep',
-				'value' => $char->ep*0.1*-1,
-				'reason' => "10% EP Decay",
+				'value' => $char->ep*0.2*-1,
+				'reason' => "20% EP Decay - Previous EP: ".$char->ep,
 			)
 		);
 		DB::table('character_history')->insert(
 			array(
 				'character_id' => $char->id,
 				'change' => 'gp',
-				'value' => $char->gp*0.1*-1,
-				'reason' => "10% GP Decay",
+				'value' => $char->gp*0.2*-1,
+				'reason' => "20% GP Decay - Previous GP: ".$char->gp,
 			)
 		);
 		}
@@ -305,8 +305,8 @@ class AdminController extends BaseController {
 		foreach ($history as $event){
 			if ($event->change == "ep"){
 				if (strpos($event->reason,"Decay")){
-					$decayAmount = round($characterEP * 0.1 * -1); 
-					DB::table('character_history')->where('id', $event->id)->update(array('reason' => "10% EP Decay - Previous EP: ".$characterEP,'value' => $decayAmount));
+					$decayAmount = round($characterEP * 0.2 * -1); 
+					DB::table('character_history')->where('id', $event->id)->update(array('reason' => "20% EP Decay - Previous EP: ".$characterEP,'value' => $decayAmount));
 					$characterEP = $characterEP + $decayAmount;
 				}else{
 					$characterEP = $characterEP + $event->value;
@@ -315,8 +315,8 @@ class AdminController extends BaseController {
 			}
 			if ($event->change == "gp"){
 				if (strpos($event->reason,"Decay")){
-					$decayAmount = round($characterGP * 0.1 * -1); 
-					DB::table('character_history')->where('id', $event->id)->update(array('reason' => "10% GP Decay - Previous GP: ".$characterGP,'value' => $decayAmount));
+					$decayAmount = round($characterGP * 0.2 * -1); 
+					DB::table('character_history')->where('id', $event->id)->update(array('reason' => "20% GP Decay - Previous GP: ".$characterGP,'value' => $decayAmount));
 					$characterGP = $characterGP + $decayAmount;
 				}else{
 					$characterGP = $characterGP + $event->value;
