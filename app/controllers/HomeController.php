@@ -22,7 +22,7 @@ class HomeController extends BaseController {
             ->join('characters', 'characters.id', '=', 'character_history.character_id')
             ->select('character_history.*','characters.name')
 			->whereNotNull('loot_url')
-			->orderBy('id','desc')
+			->orderBy('created_at','desc')
 			->take(10)
 			->get();
 		return View::make('home',compact('characters','loots'));
@@ -34,7 +34,7 @@ class HomeController extends BaseController {
             ->join('characters', 'characters.id', '=', 'character_history.character_id')
             ->select('character_history.*','characters.name')
 			->where('character_id',$characterID)
-			->orderBy('id','desc')
+			->orderBy('created_at','desc')
 			->get();
 		return View::make('history',compact('character','history'));
 	}

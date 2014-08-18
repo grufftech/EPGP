@@ -298,7 +298,7 @@ class AdminController extends BaseController {
 
 	public function recalculate($id){
 		$character = DB::table('characters')->where('id',$id)->get();
-		$history = DB::table('character_history')->where('character_id',$id)->orderby('id',"asc")->get();
+		$history = DB::table('character_history')->where('character_id',$id)->orderby('created_at',"asc")->get();
 		// Base Characters start with 1/100 EP/GP.
 		$characterEP = 1;
 		$characterGP = 100;
